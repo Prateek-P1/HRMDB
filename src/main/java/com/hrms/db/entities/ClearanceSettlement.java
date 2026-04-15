@@ -14,7 +14,7 @@ public class ClearanceSettlement {
     @Column(name = "clearance_id", length = 36)
     private String clearanceId;
 
-    @Column(name = "emp_id", nullable = false, length = 20)
+    @Column(name = "emp_id", length = 20)
     private String empId;
 
     @Column(name = "settlement_amount")
@@ -26,7 +26,17 @@ public class ClearanceSettlement {
     @Column(name = "asset_return_status", length = 30)
     private String assetReturnStatus;
 
-    // --- Getters & Setters ---
+    @Column(name = "settlement_type", length = 50)
+    private String settlementType; // RESIGNATION, TERMINATION, RETIREMENT
+
+    @Column(name = "notes", columnDefinition = "TEXT")
+    private String notes;
+
+    // Transient employee reference (not persisted directly — empId is the FK column)
+    @Transient
+    private Employee employeeObj;
+
+    // --- Core Getters & Setters ---
 
     public String getClearanceId() { return clearanceId; }
     public void setClearanceId(String clearanceId) { this.clearanceId = clearanceId; }
@@ -42,4 +52,31 @@ public class ClearanceSettlement {
 
     public String getAssetReturnStatus() { return assetReturnStatus; }
     public void setAssetReturnStatus(String assetReturnStatus) { this.assetReturnStatus = assetReturnStatus; }
+
+    public String getSettlementType() { return settlementType; }
+    public void setSettlementType(String settlementType) { this.settlementType = settlementType; }
+
+    public String getNotes() { return notes; }
+    public void setNotes(String notes) { this.notes = notes; }
+
+    // --- Alias getters used by OnboardingRepositoryImpl ---
+
+    /** Alias for clearanceId — used by exit/settlement flow */
+    public String getSettlementId() { return clearanceId; }
+    public void setSettlementId(String id) { this.clearanceId = id; }
+
+    /** Transient employee object — sets empId when assigned */
+    public Employee getEmployee() { return employeeObj; }
+    public void setEmployee(Employee employee) {
+        this.employeeObj = employee;
+        if (employee != null) this.empId = employee.getEmpId();
+    }
+
+    /** Alias for clearanceStatus */
+    public String getStatus() { return clearanceStatus; }
+    public void setStatus(String status) { this.clearanceStatus = status; }
+
+    /** Alias for settlementAmount */
+    public Double getFinalSettlementAmount() { return settlementAmount; }
+    public void setFinalSettlementAmount(Double amount) { this.settlementAmount = amount; }
 }

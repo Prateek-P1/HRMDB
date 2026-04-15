@@ -155,7 +155,7 @@ public class PerformanceRepositoryImpl implements
     }
 
     @Override
-    public List<com.hrms.db.repositories.performance.models.Employee> getEmployeesByDepartment(int deptId) {
+    public List<com.hrms.db.repositories.performance.models.Employee> getEmployeesByDept(int deptId) {
         try (Session session = DatabaseConnection.getSessionFactory().openSession()) {
             return session.createQuery("FROM Employee e", Employee.class).getResultList().stream()
                     .map(dbEmp -> {
@@ -170,43 +170,47 @@ public class PerformanceRepositoryImpl implements
     }
 
     @Override
-    public List<com.hrms.db.repositories.performance.models.Employee> getDirectReports(int managerId) { return Collections.emptyList(); }
+    public com.hrms.db.repositories.performance.models.Employee getManagerOf(int employeeId) { return null; }
     @Override
-    public List<com.hrms.db.repositories.performance.models.Employee> getAllEmployees() { return Collections.emptyList(); }
-    @Override
-    public boolean updateEmployeeRole(int employeeId, String roleId) { return false; }
+    public List<com.hrms.db.repositories.performance.models.Employee> getReportees(int managerId) { return Collections.emptyList(); }
 
     // ── IFeedbackRepository ────────────────────────────────────────
 
     @Override
-    public int submitFeedback(com.hrms.db.repositories.performance.models.Feedback feedback) {
+    public boolean submitFeedback(com.hrms.db.repositories.performance.models.Feedback feedback) {
         Transaction tx = null;
         try (Session session = DatabaseConnection.getSessionFactory().openSession()) {
             tx = session.beginTransaction();
             com.hrms.db.entities.Feedback entity = new com.hrms.db.entities.Feedback();
-            entity.setFeedbackId(UUID.randomUUID().toString());
             entity.setReviewerId(String.valueOf(feedback.getFromEmployeeId()));
-            entity.setSubjectId(String.valueOf(feedback.getToEmployeeId()));
-            entity.setFeedbackText(feedback.getComments());
-            entity.setFeedbackDate(feedback.getSubmittedDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
+            entity.setEmpId(String.valueOf(feedback.getToEmployeeId()));
+            entity.setFeedbackType("360");
+
+            String comments = feedback.getComments() != null ? feedback.getComments() : "";
+            entity.setFeedbackText("rating=" + feedback.getRating() + " | " + comments);
+
+            if (feedback.getSubmittedDate() != null) {
+                entity.setFeedbackDate(feedback.getSubmittedDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate());
+            } else {
+                entity.setFeedbackDate(java.time.LocalDate.now());
+            }
             session.persist(entity);
             tx.commit();
-            return Math.abs(entity.getFeedbackId().hashCode());
-        } catch (Exception ex) { return handleError("submitFeedback", ex, -1); }
+            return true;
+        } catch (Exception ex) {
+            if (tx != null) try { tx.rollback(); } catch (Exception ignored) {}
+            return handleError("submitFeedback", ex, false);
+        }
     }
 
     @Override
-    public List<com.hrms.db.repositories.performance.models.Feedback> getFeedbackGivenBy(int employeeId) { return Collections.emptyList(); }
+    public List<com.hrms.db.repositories.performance.models.Feedback> getFeedbackForEmployee(int employeeId, int cycleId) { return Collections.emptyList(); }
     @Override
-    public List<com.hrms.db.repositories.performance.models.Feedback> getFeedbackReceivedBy(int employeeId) { return Collections.emptyList(); }
+    public List<com.hrms.db.repositories.performance.models.Feedback> getFeedbackByReviewer(int reviewerId, int cycleId) { return Collections.emptyList(); }
     @Override
-    public int requestFeedback(com.hrms.db.repositories.performance.models.FeedbackRequest request) { return 1; }
+    public int requestFeedback(int fromEmployeeId, int toEmployeeId, int cycleId) { return 1; }
     @Override
-    public boolean updateFeedbackRequestStatus(int requestId, String status) { return true; }
-    @Override
-    public List<com.hrms.db.repositories.performance.models.FeedbackRequest> getPendingRequestsFor(int employeeId) { return Collections.emptyList(); }
-    @Override
-    public List<com.hrms.db.repositories.performance.models.FeedbackRequest> getRequestsSentBy(int employeeId) { return Collections.emptyList(); }
+    public List<com.hrms.db.repositories.performance.models.FeedbackRequest> getPendingRequests(int reviewerId) { return Collections.emptyList(); }
 
     // ── IGoalRepository ───────────────────────────────────────────
 
@@ -229,16 +233,11 @@ public class PerformanceRepositoryImpl implements
     @Override
     public boolean updateGoalProgress(int goalId, float progress) { return true; } // Not tracked natively in Goals entity
     @Override
-    public boolean updateGoalStatus(int goalId, String status) {
-        return executeUpdate("updateGoalStatus", "UPDATE Goal g SET g.goalStatus = :status WHERE g.goalId = :id",
-                Map.of("status", status, "id", (long)goalId));
-    }
+    public boolean updateGoal(com.hrms.db.repositories.performance.models.Goal goal) { return true; }
     @Override
     public com.hrms.db.repositories.performance.models.Goal getGoalById(int goalId) { return null; }
     @Override
-    public List<com.hrms.db.repositories.performance.models.Goal> getGoalsByEmployee(int employeeId) { return Collections.emptyList(); }
-    @Override
-    public List<com.hrms.db.repositories.performance.models.Goal> getGoalsByEmployeeAndCycle(int employeeId, String cycle) { return Collections.emptyList(); }
+    public List<com.hrms.db.repositories.performance.models.Goal> getGoalsByEmployee(int employeeId, String cycle) { return Collections.emptyList(); }
     @Override
     public boolean deleteGoal(int goalId) {
         return executeUpdate("deleteGoal", "DELETE FROM Goal g WHERE g.goalId = :id", Map.of("id", (long)goalId));
@@ -253,8 +252,8 @@ public class PerformanceRepositoryImpl implements
             tx = session.beginTransaction();
             Kpi entity = new Kpi();
             entity.setKpiName(kpi.getName());
-            entity.setKpiType(kpi.getUnit());
-            entity.setTargetValue(kpi.getTargetValue());
+            entity.setKpiUnit(kpi.getUnit());
+            entity.setKpiTargetValue(kpi.getTargetValue());
             session.persist(entity);
             tx.commit();
             return entity.getKpiId().intValue();
@@ -262,36 +261,26 @@ public class PerformanceRepositoryImpl implements
     }
 
     @Override
-    public boolean recordKPIValue(KPIRecord record) { return true; }
+    public boolean assignKPIToEmployee(int kpiId, int employeeId) { return true; }
     @Override
-    public KPI getKPIById(int kpiId) { return null; }
+    public boolean recordKPIValue(int kpiId, double value, Date date) { return true; }
     @Override
-    public List<KPI> getKPIsByEmployee(int employeeId) { return Collections.emptyList(); }
+    public List<KPI> getKPIsByEmployee(int employeeId, String cycle) { return Collections.emptyList(); }
     @Override
-    public List<KPI> getKPIsByCycle(int employeeId, String cycle) { return Collections.emptyList(); }
-    @Override
-    public List<KPIRecord> getKPITrackingRecords(int kpiId) { return Collections.emptyList(); }
-    @Override
-    public boolean deleteKPI(int kpiId) {
-        return executeUpdate("deleteKPI", "DELETE FROM Kpi k WHERE k.kpiId = :id", Map.of("id", (long)kpiId));
-    }
+    public List<KPIRecord> getKPIHistory(int kpiId) { return Collections.emptyList(); }
 
     // ── INotificationRepository ───────────────────────────────────
     
     @Override
-    public boolean createNotification(com.hrms.db.repositories.performance.models.Notification notification) { return true; }
+    public int createNotification(com.hrms.db.repositories.performance.models.Notification notification) { return 1; }
     @Override
-    public List<com.hrms.db.repositories.performance.models.Notification> getUnreadNotifications(int userId) { return Collections.emptyList(); }
+    public boolean markAsRead(int notifId) { return true; }
     @Override
-    public List<com.hrms.db.repositories.performance.models.Notification> getAllNotifications(int userId) { return Collections.emptyList(); }
-    @Override
-    public boolean markAsRead(int notificationId) { return true; }
+    public List<com.hrms.db.repositories.performance.models.Notification> getNotificationsByUser(int userId) { return Collections.emptyList(); }
     @Override
     public boolean scheduleReminder(Reminder reminder) { return true; }
     @Override
-    public List<Reminder> getPendingReminders() { return Collections.emptyList(); }
-    @Override
-    public boolean markReminderSent(int reminderId) { return true; }
+    public List<Reminder> getPendingReminders(Date asOfDate) { return Collections.emptyList(); }
 
     // ── IPerformanceCycleRepository ────────────────────────────────
     @Override
@@ -303,35 +292,31 @@ public class PerformanceRepositoryImpl implements
     @Override
     public PerformanceCycle getActiveCycle() { return null; }
     @Override
-    public boolean updateCycleStatus(int cycleId, boolean active) { return true; }
+    public boolean closeCycle(int cycleId) { return true; }
 
     // ── IReportRepository ──────────────────────────────────────────
     @Override
+    public DeptReport getDeptPerformanceSummary(int deptId, int cycleId) { return null; }
+    @Override
+    public List<com.hrms.db.repositories.performance.models.Employee> getTopPerformers(int deptId, int cycleId, int n) { return Collections.emptyList(); }
+    @Override
     public ProgressReport getEmployeeProgressReport(int employeeId, int cycleId) { return null; }
     @Override
-    public DeptReport getDepartmentPerformanceReport(int deptId, int cycleId) { return null; }
+    public double getAppraisalCompletionRate(int cycleId) { return 0.0; }
     @Override
-    public List<DeptReport> getAllDepartmentReports(int cycleId) { return Collections.emptyList(); }
-    @Override
-    public byte[] generatePDFReport(Object reportData) { return new byte[0]; }
-    @Override
-    public byte[] generateExcelReport(Object reportData) { return new byte[0]; }
+    public List<SkillGapSummary> getSkillGapSummary(int deptId) { return Collections.emptyList(); }
 
     // ── ISkillGapRepository ───────────────────────────────────────
-    @Override
-    public boolean saveSkillProfile(SkillProfile profile) { return true; }
     @Override
     public SkillProfile getSkillProfile(int employeeId) { return null; }
     @Override
     public boolean updateSkillRating(int employeeId, int skillId, int rating) { return true; }
     @Override
+    public List<Skill> getRequiredSkills(String roleId) { return Collections.emptyList(); }
+    @Override
+    public List<com.hrms.db.repositories.performance.models.SkillGap> getSkillGaps(int employeeId, String roleId) { return Collections.emptyList(); }
+    @Override
     public List<Skill> getAllSkills() { return Collections.emptyList(); }
-    @Override
-    public int createSkill(Skill skill) { return 1; }
-    @Override
-    public SkillGapSummary getSkillGaps(int employeeId) { return null; }
-    @Override
-    public List<SkillGapSummary> getDepartmentSkillGaps(int deptId) { return Collections.emptyList(); }
 
     // ── Helpers ───────────────────────────────────────────────────
 

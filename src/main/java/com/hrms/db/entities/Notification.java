@@ -34,12 +34,21 @@ public class Notification {
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
+    @Column(name = "subject", length = 200)
+    private String subject;
+
+    @Column(name = "status", length = 30)
+    private String status = "PENDING"; // PENDING, SENT, READ
+
+    @Column(name = "scheduled_at")
+    private LocalDateTime scheduledAt;
+
     @PrePersist
     protected void onCreate() {
         this.createdAt = LocalDateTime.now();
     }
 
-    // --- Getters & Setters ---
+    // --- Core Getters & Setters ---
 
     public Long getNotificationId() { return notificationId; }
     public void setNotificationId(Long notificationId) { this.notificationId = notificationId; }
@@ -60,4 +69,23 @@ public class Notification {
     public void setTriggeredBy(String triggeredBy) { this.triggeredBy = triggeredBy; }
 
     public LocalDateTime getCreatedAt() { return createdAt; }
+
+    public String getSubject() { return subject; }
+    public void setSubject(String subject) { this.subject = subject; }
+
+    public String getStatus() { return status; }
+    public void setStatus(String status) { this.status = status; }
+
+    public LocalDateTime getScheduledAt() { return scheduledAt; }
+    public void setScheduledAt(LocalDateTime scheduledAt) { this.scheduledAt = scheduledAt; }
+
+    // --- Alias getters used by OnboardingRepositoryImpl ---
+
+    /** The body of the notification (alias for notificationMessage) */
+    public String getBody() { return notificationMessage; }
+    public void setBody(String body) { this.notificationMessage = body; }
+
+    /** Alias for recipientId — used by onboarding notification flow */
+    public String getRecipientEmpId() { return recipientId; }
+    public void setRecipientEmpId(String empId) { this.recipientId = empId; }
 }

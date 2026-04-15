@@ -9,7 +9,6 @@ import com.hrms.db.interfaces.RecordNotFoundException;
 import com.hrms.db.logging.*;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.query.Query;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -90,7 +89,6 @@ public class OnboardingRepositoryImpl implements IOnboardingRepository {
 
     @Override
     public void updateOnboardingStatus(String candidateID, String status) {
-        // Candidate entity maps to the 'candidates' table; status field = applicationStatus
         executeUpdate("updateOnboardingStatus",
                 "UPDATE Candidate c SET c.applicationStatus = :status WHERE c.candidateId = :id",
                 Map.of("status", status, "id", candidateID));
@@ -144,11 +142,10 @@ public class OnboardingRepositoryImpl implements IOnboardingRepository {
     }
 
     // ── Policy Compliance ────────────────────────────────────────────
-
     @Override
     public List<CompliancePolicy> getAllPolicies() {
         try (Session session = DatabaseConnection.getSessionFactory().openSession()) {
-            return session.createQuery("FROM CompliancePolicy", CompliancePolicy.class)
+            return session.createQuery("FROM CompliancePolicy", com.hrms.db.entities.CompliancePolicy.class)
                     .getResultList().stream().map(this::toPolicyDTO).collect(Collectors.toList());
         } catch (Exception ex) {
             handleError("getAllPolicies", ex, ErrorLevel.ERROR);
@@ -214,16 +211,13 @@ public class OnboardingRepositoryImpl implements IOnboardingRepository {
 
     @Override
     public void createExitRequest(ExitRequestDTO request) {
-        // Map to ClearanceSettlement entity (closest available exit tracking entity)
         Transaction tx = null;
         try (Session session = DatabaseConnection.getSessionFactory().openSession()) {
             tx = session.beginTransaction();
 
-            Employee emp = session.get(Employee.class, request.employeeID);
-
             ClearanceSettlement cs = new ClearanceSettlement();
             cs.setSettlementId(request.requestID != null ? request.requestID : UUID.randomUUID().toString());
-            cs.setEmployee(emp);
+            cs.setEmpId(request.employeeID);
             cs.setSettlementType(request.exitType);
             cs.setStatus(request.status != null ? request.status : "SUBMITTED");
             cs.setNotes(request.reason);
@@ -239,8 +233,9 @@ public class OnboardingRepositoryImpl implements IOnboardingRepository {
     @Override
     public ExitRequestDTO getExitDetails(String employeeID) {
         try (Session session = DatabaseConnection.getSessionFactory().openSession()) {
+            // Query by empId (the actual persisted FK column)
             ClearanceSettlement cs = session.createQuery(
-                    "FROM ClearanceSettlement cs WHERE cs.employee.empId = :id ORDER BY cs.settlementId DESC",
+                    "FROM ClearanceSettlement cs WHERE cs.empId = :id ORDER BY cs.clearanceId DESC",
                     ClearanceSettlement.class)
                     .setParameter("id", employeeID)
                     .setMaxResults(1).uniqueResult();
@@ -255,7 +250,7 @@ public class OnboardingRepositoryImpl implements IOnboardingRepository {
     @Override
     public void updateExitStatus(String employeeID, String status) {
         executeUpdate("updateExitStatus",
-                "UPDATE ClearanceSettlement cs SET cs.status = :status WHERE cs.employee.empId = :id",
+                "UPDATE ClearanceSettlement cs SET cs.clearanceStatus = :status WHERE cs.empId = :id",
                 Map.of("status", status, "id", employeeID));
     }
 
@@ -313,10 +308,9 @@ public class OnboardingRepositoryImpl implements IOnboardingRepository {
         Transaction tx = null;
         try (Session session = DatabaseConnection.getSessionFactory().openSession()) {
             tx = session.beginTransaction();
-            Employee emp = session.get(Employee.class, clearance.employeeID);
             ClearanceSettlement cs = new ClearanceSettlement();
             cs.setSettlementId(clearance.clearanceID != null ? clearance.clearanceID : UUID.randomUUID().toString());
-            cs.setEmployee(emp);
+            cs.setEmpId(clearance.employeeID);
             cs.setStatus(clearance.clearanceStatus != null ? clearance.clearanceStatus : "INITIATED");
             cs.setFinalSettlementAmount(clearance.finalSettlementAmount);
             cs.setNotes(clearance.remarks);
@@ -332,7 +326,7 @@ public class OnboardingRepositoryImpl implements IOnboardingRepository {
     public ClearanceDTO getSettlement(String employeeID) {
         try (Session session = DatabaseConnection.getSessionFactory().openSession()) {
             ClearanceSettlement cs = session.createQuery(
-                    "FROM ClearanceSettlement cs WHERE cs.employee.empId = :id",
+                    "FROM ClearanceSettlement cs WHERE cs.empId = :id",
                     ClearanceSettlement.class)
                     .setParameter("id", employeeID).setMaxResults(1).uniqueResult();
             if (cs == null) return null;
@@ -346,7 +340,7 @@ public class OnboardingRepositoryImpl implements IOnboardingRepository {
     @Override
     public void updateClearanceStatus(String clearanceID, String status) {
         executeUpdate("updateClearanceStatus",
-                "UPDATE ClearanceSettlement cs SET cs.status = :status WHERE cs.settlementId = :id",
+                "UPDATE ClearanceSettlement cs SET cs.clearanceStatus = :status WHERE cs.clearanceId = :id",
                 Map.of("status", status, "id", clearanceID));
     }
 
@@ -358,8 +352,7 @@ public class OnboardingRepositoryImpl implements IOnboardingRepository {
         try (Session session = DatabaseConnection.getSessionFactory().openSession()) {
             tx = session.beginTransaction();
             Notification entity = new Notification();
-            entity.setNotificationId(notification.notificationID != null ? notification.notificationID : UUID.randomUUID().toString());
-            entity.setRecipientEmpId(notification.recipientEmployeeID);
+            entity.setRecipientId(notification.recipientEmployeeID);
             entity.setNotificationType(notification.notificationType);
             entity.setSubject(notification.subject);
             entity.setBody(notification.body);
@@ -377,7 +370,7 @@ public class OnboardingRepositoryImpl implements IOnboardingRepository {
     public List<OnboardingNotification> getNotifications(String employeeID) {
         try (Session session = DatabaseConnection.getSessionFactory().openSession()) {
             return session.createQuery(
-                    "FROM Notification n WHERE n.recipientEmpId = :id ORDER BY n.scheduledAt DESC",
+                    "FROM Notification n WHERE n.recipientId = :id ORDER BY n.createdAt DESC",
                     Notification.class)
                     .setParameter("id", employeeID)
                     .getResultList().stream().map(this::toNotificationDTO).collect(Collectors.toList());
@@ -391,14 +384,13 @@ public class OnboardingRepositoryImpl implements IOnboardingRepository {
     public void updateNotificationStatus(String notificationID, String status) {
         executeUpdate("updateNotificationStatus",
                 "UPDATE Notification n SET n.status = :status WHERE n.notificationId = :id",
-                Map.of("status", status, "id", notificationID));
+                Map.of("status", status, "id", Long.parseLong(notificationID)));
     }
 
     // ── Progress Tracking ────────────────────────────────────────────
 
     @Override
     public ProgressDTO getProgress(String employeeID, String processType) {
-        // Progress is computed from task completion, not a dedicated table
         try (Session session = DatabaseConnection.getSessionFactory().openSession()) {
             long total = (Long) session.createQuery(
                     "SELECT COUNT(t) FROM OnboardingTask t WHERE t.employee.empId = :id", Long.class)
@@ -431,7 +423,6 @@ public class OnboardingRepositoryImpl implements IOnboardingRepository {
 
     // ── Private Helpers ──────────────────────────────────────────────
 
-    /** Runs a HQL UPDATE query and auto-commits. */
     private void executeUpdate(String method, String hql, Map<String, Object> params) {
         Transaction tx = null;
         try (Session session = DatabaseConnection.getSessionFactory().openSession()) {
@@ -474,9 +465,9 @@ public class OnboardingRepositoryImpl implements IOnboardingRepository {
         OnboardingCandidate dto = new OnboardingCandidate();
         dto.candidateID      = c.getCandidateId();
         dto.name             = c.getName();
-        dto.email            = c.getEmail();
-        dto.phone            = c.getPhone();
-        dto.onboardingStatus = c.getApplicationStatus();
+        dto.email            = c.getContactInfo(); // alias mapped
+        dto.phone            = "N/A"; // not natively split
+        dto.onboardingStatus = c.getSource(); // using source as a proxy for now
         return dto;
     }
 
@@ -492,10 +483,10 @@ public class OnboardingRepositoryImpl implements IOnboardingRepository {
 
     private CompliancePolicy toPolicyDTO(com.hrms.db.entities.CompliancePolicy p) {
         CompliancePolicy dto = new CompliancePolicy();
-        dto.policyID   = p.getPolicyId();
+        dto.policyID   = String.valueOf(p.getPolicyId());
         dto.policyName = p.getPolicyName();
-        dto.policyText = p.getPolicyText();
-        dto.complianceStatus = p.getStatus();
+        dto.policyText = p.getViolationDescription(); // alias mapped
+        dto.complianceStatus = p.getIsActive() != null && p.getIsActive() ? "ACTIVE" : "INACTIVE"; // mapped bool to status
         return dto;
     }
 
@@ -514,7 +505,7 @@ public class OnboardingRepositoryImpl implements IOnboardingRepository {
     private ExitRequestDTO toExitRequestDTO(ClearanceSettlement cs) {
         ExitRequestDTO dto = new ExitRequestDTO();
         dto.requestID  = cs.getSettlementId();
-        dto.employeeID = cs.getEmployee() != null ? cs.getEmployee().getEmpId() : null;
+        dto.employeeID = cs.getEmpId();
         dto.exitType   = cs.getSettlementType();
         dto.status     = cs.getStatus();
         dto.reason     = cs.getNotes();
@@ -535,7 +526,7 @@ public class OnboardingRepositoryImpl implements IOnboardingRepository {
     private ClearanceDTO toClearanceDTO(ClearanceSettlement cs) {
         ClearanceDTO dto = new ClearanceDTO();
         dto.clearanceID            = cs.getSettlementId();
-        dto.employeeID             = cs.getEmployee() != null ? cs.getEmployee().getEmpId() : null;
+        dto.employeeID             = cs.getEmpId();
         dto.clearanceStatus        = cs.getStatus();
         dto.finalSettlementAmount  = cs.getFinalSettlementAmount() != null ? cs.getFinalSettlementAmount() : 0.0;
         dto.remarks                = cs.getNotes();
@@ -544,8 +535,9 @@ public class OnboardingRepositoryImpl implements IOnboardingRepository {
 
     private OnboardingNotification toNotificationDTO(Notification n) {
         OnboardingNotification dto = new OnboardingNotification();
-        dto.notificationID        = n.getNotificationId();
-        dto.recipientEmployeeID   = n.getRecipientEmpId();
+        // notificationId is Long — convert to String for the DTO
+        dto.notificationID        = n.getNotificationId() != null ? String.valueOf(n.getNotificationId()) : null;
+        dto.recipientEmployeeID   = n.getRecipientId();
         dto.notificationType      = n.getNotificationType();
         dto.subject               = n.getSubject();
         dto.body                  = n.getBody();
