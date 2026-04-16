@@ -1,48 +1,28 @@
+package com.hrms.db.repositories.payroll;
+
 /**
- * Master Container for all data required to start calculations.
+ * PayrollDataPackage — master container for all data required to start payroll calculations.
+ *
+ * Returned by IPayrollRepository.fetchEmployeeData().
+ * The Payroll Subsystem unpacks the four inner packages and feeds them to its calculators.
+ *
+ * NOTE: All inner DTO classes use public fields (no getters/setters) for simplicity
+ * and to match the Payroll team's original design decision.
  */
 public class PayrollDataPackage {
-    public EmployeeDTO employee;
-    public AttendanceDTO attendance;
-    public FinancialsDTO financials;
-    public TaxContextDTO tax;
+
+    /** The pay period this data package covers (YYYY-MM format, e.g. "2025-06"). */
     public String payPeriod;
-}
 
-// Group 1: Basic Info & Salary Grade
-class EmployeeDTO {
-    public String empID;
-    public String name;
-    public String department;
-    public String gradeLevel;
-    public double basicPay;
-    public int yearsOfService;
-}
+    /** Group 1: Basic employee identity and salary grade. */
+    public EmployeeDTO employee;
 
-// Group 2: Attendance & Leave (Used by LossOfPayTracker)
-class AttendanceDTO {
-    public int workingDaysInMonth;
-    public int leaveWithPay;
-    public int leaveWithoutPay; // "lopDays"
-    public double hoursWorked;
-    public double overtimeHours;
-}
+    /** Group 2: Attendance, leave, and hours — used by LossOfPayTracker. */
+    public AttendanceDTO attendance;
 
-// Group 3: Claims & Investments (Used by Reimbursement/Bonus)
-class FinancialsDTO {
-    public double pendingClaims;
-    public double approvedReimbursement;
-    public double insurancePremium;
-    public double declaredInvestments;
-}
+    /** Group 3: Claims and investments — used by Reimbursement/Bonus calculators. */
+    public FinancialsDTO financials;
 
-// Group 4: Region & Tax (Used by IncomeTaxTDS)
-class TaxContextDTO {
-    public String countryCode;
-    public String currencyCode;
-    public String taxRegime;
-    public String stateName;
-    public String filingStatus;
-    public String taxCode;
-    public String nationalIDNumber;
+    /** Group 4: Region/tax context — used by IncomeTaxTDS calculator. */
+    public TaxContextDTO tax;
 }
