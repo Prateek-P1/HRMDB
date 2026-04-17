@@ -3,6 +3,10 @@ package com.hrms.db.factory;
 import com.hrms.db.repositories.attrition.AttritionRepositoryImpl;
 import com.hrms.db.repositories.attrition.IAttritionRepository;
 import com.hrms.db.repositories.Customization_team.*;
+import com.hrms.db.repositories.docu_management.AuditRepository;
+import com.hrms.db.repositories.docu_management.AuditRepositoryImpl;
+import com.hrms.db.repositories.docu_management.DocumentRepository;
+import com.hrms.db.repositories.docu_management.DocumentRepositoryImpl;
 import com.hrms.db.repositories.leave.*;
 import com.hrms.db.repositories.security.*;
 import com.hrms.db.repositories.onboarding.IOnboardingRepository;
@@ -28,6 +32,8 @@ public class RepositoryFactory {
     private IPayrollRepository payrollRepository;
     private IAttritionRepository attritionRepository;
     private IOnboardingRepository onboardingRepository;
+    private DocumentRepository documentRepository;
+    private AuditRepository documentAuditRepository;
     private CustomizationRepositoryImpl customizationRepository;
     private PerformanceRepositoryImpl performanceRepository;
     private LeaveRepositoryImpl leaveRepository;
@@ -62,6 +68,30 @@ public class RepositoryFactory {
     public synchronized IOnboardingRepository getOnboardingRepository() {
         if (onboardingRepository == null) onboardingRepository = new OnboardingRepositoryImpl();
         return onboardingRepository;
+    }
+
+    // ── Document Management ────────────────────────────────────────────
+
+    private synchronized DocumentRepository getDocumentRepositoryImpl() {
+        if (documentRepository == null) {
+            documentRepository = new DocumentRepositoryImpl();
+        }
+        return documentRepository;
+    }
+
+    private synchronized AuditRepository getDocumentAuditRepositoryImpl() {
+        if (documentAuditRepository == null) {
+            documentAuditRepository = new AuditRepositoryImpl();
+        }
+        return documentAuditRepository;
+    }
+
+    public DocumentRepository getDocumentRepository() {
+        return getDocumentRepositoryImpl();
+    }
+
+    public AuditRepository getDocumentAuditRepository() {
+        return getDocumentAuditRepositoryImpl();
     }
 
     // ── Customization (Unified Impl) ───────────────────────────────────

@@ -83,6 +83,8 @@
 
         <!-- Document Management -->
         <mapping class="com.hrms.db.entities.Document"/>
+        <mapping class="com.hrms.db.entities.DocumentMetadataRecord"/>
+        <mapping class="com.hrms.db.entities.DocumentAuditLogRecord"/>
 
         <!-- Security -->
         <mapping class="com.hrms.db.entities.UserSession"/>
