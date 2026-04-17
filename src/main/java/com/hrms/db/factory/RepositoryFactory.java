@@ -4,6 +4,7 @@ import com.hrms.db.repositories.attrition.AttritionRepositoryImpl;
 import com.hrms.db.repositories.attrition.IAttritionRepository;
 import com.hrms.db.repositories.Customization_team.*;
 import com.hrms.db.repositories.leave.*;
+import com.hrms.db.repositories.security.*;
 import com.hrms.db.repositories.onboarding.IOnboardingRepository;
 import com.hrms.db.repositories.onboarding.OnboardingRepositoryImpl;
 import com.hrms.db.repositories.payroll.IPayrollRepository;
@@ -31,6 +32,7 @@ public class RepositoryFactory {
     private PerformanceRepositoryImpl performanceRepository;
     private LeaveRepositoryImpl leaveRepository;
     private com.hrms.db.repositories.Leave_Management_Subsytem.LeaveManagementSubsystemRepositoryImpl leaveManagementSubsystemRepository;
+    private SecurityRepositoryImpl securityRepository;
 
     private RepositoryFactory() {}
 
@@ -143,4 +145,16 @@ public class RepositoryFactory {
     public com.hrms.db.repositories.Leave_Management_Subsytem.IPayrollSyncRepository getLeaveManagementSubsystemPayrollSyncRepository() {
         return getLeaveManagementSubsystemImpl();
     }
+
+    // ── Security (Unified Impl) ──────────────────────────────────────
+
+    private synchronized SecurityRepositoryImpl getSecurityImpl() {
+        if (securityRepository == null) securityRepository = new SecurityRepositoryImpl();
+        return securityRepository;
+    }
+
+    public IAuditService getAuditService() { return getSecurityImpl(); }
+    public IAuthenticationService getAuthenticationService() { return getSecurityImpl(); }
+    public IAuthorizationService getAuthorizationService() { return getSecurityImpl(); }
+    public IEncryptionService getEncryptionService() { return getSecurityImpl(); }
 }

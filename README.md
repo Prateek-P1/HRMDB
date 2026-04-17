@@ -31,8 +31,10 @@ So when you run any code that initializes Hibernate, it will create/update a fil
 
 Runs a short connectivity + query check:
 ```bash
-./mvnw.cmd -DskipTests org.codehaus.mojo:exec-maven-plugin:3.5.0:java -Dexec.mainClass=com.hrms.db.tools.DatabaseSmokeTest
+./mvnw.cmd -DskipTests org.codehaus.mojo:exec-maven-plugin:3.5.0:java "-Dexec.mainClass=com.hrms.db.tools.DatabaseSmokeTest"
 ```
+
+This smoke test also seeds a small amount of deterministic dummy data (`SMOKE_*` rows) if it is missing, so you can visually confirm tables are being populated.
 
 ### Option B: GUI Diagnostics Dashboard
 
