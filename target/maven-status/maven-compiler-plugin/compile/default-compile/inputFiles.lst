@@ -35,6 +35,9 @@ C:\Users\nirav\HRMDB\src\main\java\com\hrms\db\entities\Financial.java
 C:\Users\nirav\HRMDB\src\main\java\com\hrms\db\entities\Goal.java
 C:\Users\nirav\HRMDB\src\main\java\com\hrms\db\entities\Holiday.java
 C:\Users\nirav\HRMDB\src\main\java\com\hrms\db\entities\HrReport.java
+C:\Users\nirav\HRMDB\src\main\java\com\hrms\db\entities\InterviewerAvailability.java
+C:\Users\nirav\HRMDB\src\main\java\com\hrms\db\entities\InterviewerProfile.java
+C:\Users\nirav\HRMDB\src\main\java\com\hrms\db\entities\InterviewResult.java
 C:\Users\nirav\HRMDB\src\main\java\com\hrms\db\entities\InterviewSchedule.java
 C:\Users\nirav\HRMDB\src\main\java\com\hrms\db\entities\JobPosting.java
 C:\Users\nirav\HRMDB\src\main\java\com\hrms\db\entities\Kpi.java
@@ -52,6 +55,7 @@ C:\Users\nirav\HRMDB\src\main\java\com\hrms\db\entities\PlanTask.java
 C:\Users\nirav\HRMDB\src\main\java\com\hrms\db\entities\PublicHoliday.java
 C:\Users\nirav\HRMDB\src\main\java\com\hrms\db\entities\ReadinessScore.java
 C:\Users\nirav\HRMDB\src\main\java\com\hrms\db\entities\Receipt.java
+C:\Users\nirav\HRMDB\src\main\java\com\hrms\db\entities\ScreeningResult.java
 C:\Users\nirav\HRMDB\src\main\java\com\hrms\db\entities\SecurityAuditLog.java
 C:\Users\nirav\HRMDB\src\main\java\com\hrms\db\entities\SkillGap.java
 C:\Users\nirav\HRMDB\src\main\java\com\hrms\db\entities\SuccessorAssignment.java
@@ -153,6 +157,10 @@ C:\Users\nirav\HRMDB\src\main\java\com\hrms\db\repositories\performance\models\S
 C:\Users\nirav\HRMDB\src\main\java\com\hrms\db\repositories\performance\models\SkillGapSummary.java
 C:\Users\nirav\HRMDB\src\main\java\com\hrms\db\repositories\performance\models\SkillProfile.java
 C:\Users\nirav\HRMDB\src\main\java\com\hrms\db\repositories\performance\PerformanceRepositoryImpl.java
+C:\Users\nirav\HRMDB\src\main\java\com\hrms\db\repositories\recruitment_management\IRecruitmentRepository.java
+C:\Users\nirav\HRMDB\src\main\java\com\hrms\db\repositories\recruitment_management\RecruitmentDTOs.java
+C:\Users\nirav\HRMDB\src\main\java\com\hrms\db\repositories\recruitment_management\RecruitmentInterfaces.java
+C:\Users\nirav\HRMDB\src\main\java\com\hrms\db\repositories\recruitment_management\RecruitmentRepositoryImpl.java
 C:\Users\nirav\HRMDB\src\main\java\com\hrms\db\repositories\security\IAuditService.java
 C:\Users\nirav\HRMDB\src\main\java\com\hrms\db\repositories\security\IAuthenticationService.java
 C:\Users\nirav\HRMDB\src\main\java\com\hrms\db\repositories\security\IAuthorizationService.java

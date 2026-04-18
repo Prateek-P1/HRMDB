@@ -26,6 +26,15 @@ public class Application {
     @Column(name = "current_stage", length = 50)
     private String currentStage; // APPLIED, SCREENING, INTERVIEW, OFFER, HIRED, REJECTED
 
+    @Column(name = "history", columnDefinition = "TEXT")
+    private String history;
+
+    @Column(name = "status_timestamp")
+    private java.time.LocalDateTime timestamp;
+
+    @Column(name = "status", length = 20)
+    private String status = "ACTIVE"; // ACTIVE, DELETED
+
     @Column(name = "score")
     private Integer score;
 
@@ -51,6 +60,15 @@ public class Application {
 
     public String getCurrentStage() { return currentStage; }
     public void setCurrentStage(String currentStage) { this.currentStage = currentStage; }
+
+    public String getHistory() { return history; }
+    public void setHistory(String history) { this.history = history; }
+
+    public java.time.LocalDateTime getTimestamp() { return timestamp; }
+    public void setTimestamp(java.time.LocalDateTime timestamp) { this.timestamp = timestamp; }
+
+    public String getStatus() { return status; }
+    public void setStatus(String status) { this.status = status; }
 
     public Integer getScore() { return score; }
     public void setScore(Integer score) { this.score = score; }

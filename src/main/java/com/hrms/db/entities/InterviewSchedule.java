@@ -39,6 +39,9 @@ public class InterviewSchedule {
     @Column(name = "outcome", length = 20)
     private String outcome; // PASS, FAIL, ON_HOLD
 
+    @Column(name = "status", length = 20)
+    private String status = "ACTIVE"; // ACTIVE, DELETED
+
     // --- Getters & Setters ---
 
     public String getScheduleId() { return scheduleId; }
@@ -67,4 +70,7 @@ public class InterviewSchedule {
 
     public String getOutcome() { return outcome; }
     public void setOutcome(String outcome) { this.outcome = outcome; }
+
+    public String getStatus() { return status; }
+    public void setStatus(String status) { this.status = status; }
 }
