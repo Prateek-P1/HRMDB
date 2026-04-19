@@ -28,6 +28,9 @@ public class Candidate {
     @Column(name = "source", length = 50)
     private String source; // REFERRAL, LINKEDIN, PORTAL, etc.
 
+    @Column(name = "status", length = 20)
+    private String status = "ACTIVE"; // ACTIVE, DELETED
+
     // --- Getters & Setters ---
 
     public String getCandidateId() { return candidateId; }
@@ -47,4 +50,7 @@ public class Candidate {
 
     public String getSource() { return source; }
     public void setSource(String source) { this.source = source; }
+
+    public String getStatus() { return status; }
+    public void setStatus(String status) { this.status = status; }
 }

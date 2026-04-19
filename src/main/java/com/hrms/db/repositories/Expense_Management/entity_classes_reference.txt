@@ -1,0 +1,46 @@
+// ============================================
+// ENTITY CLASSES REFERENCE (for DB schema)
+// ============================================
+/*
+Employee {
+String employeeId;
+String name;
+String email;
+String department;
+String role;
+String managerId;
+}
+ExpenseClaim {
+Long claimId;
+String employeeId;
+BigDecimal amount;
+LocalDate expenseDate;
+ClaimStatus status;
+String description;
+CategoryType category;
+LocalDate submissionDate;
+String approvedBy;
+}
+DepartmentBudget {
+Integer departmentId;
+String departmentName;
+BigDecimal budgetLimit;
+BigDecimal currentSpent;
+}
+AuditLog {
+Long logId;
+Long claimId;
+String employeeId;
+ActionType action;
+String details;
+LocalDateTime timestamp;
+String exceptionName;
+}
+Receipt {
+Long receiptId;
+Long claimId;
+String filePath;
+String fileName;
+LocalDateTime uploadDate;
+}
+*/

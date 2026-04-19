@@ -42,6 +42,7 @@
         <mapping class="com.hrms.db.entities.DepartmentBudget"/>
         <mapping class="com.hrms.db.entities.ClaimApproval"/>
         <mapping class="com.hrms.db.entities.Receipt"/>
+        <mapping class="com.hrms.db.entities.ExpenseAuditLog"/>
 
         <!-- Time Tracking -->
         <mapping class="com.hrms.db.entities.TimeEntry"/>
@@ -53,7 +54,11 @@
         <mapping class="com.hrms.db.entities.JobPosting"/>
         <mapping class="com.hrms.db.entities.Candidate"/>
         <mapping class="com.hrms.db.entities.Application"/>
+        <mapping class="com.hrms.db.entities.ScreeningResult"/>
+        <mapping class="com.hrms.db.entities.InterviewerProfile"/>
+        <mapping class="com.hrms.db.entities.InterviewerAvailability"/>
         <mapping class="com.hrms.db.entities.InterviewSchedule"/>
+        <mapping class="com.hrms.db.entities.InterviewResult"/>
         <mapping class="com.hrms.db.entities.Offer"/>
 
         <!-- Performance -->
@@ -83,6 +88,8 @@
 
         <!-- Document Management -->
         <mapping class="com.hrms.db.entities.Document"/>
+        <mapping class="com.hrms.db.entities.DocumentMetadataRecord"/>
+        <mapping class="com.hrms.db.entities.DocumentAuditLogRecord"/>
 
         <!-- Security -->
         <mapping class="com.hrms.db.entities.UserSession"/>

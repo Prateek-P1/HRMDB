@@ -3,6 +3,11 @@ package com.hrms.db.factory;
 import com.hrms.db.repositories.attrition.AttritionRepositoryImpl;
 import com.hrms.db.repositories.attrition.IAttritionRepository;
 import com.hrms.db.repositories.Customization_team.*;
+import com.hrms.db.repositories.docu_management.AuditRepository;
+import com.hrms.db.repositories.docu_management.AuditRepositoryImpl;
+import com.hrms.db.repositories.docu_management.DocumentRepository;
+import com.hrms.db.repositories.docu_management.DocumentRepositoryImpl;
+import com.hrms.db.repositories.benefits.*;
 import com.hrms.db.repositories.leave.*;
 import com.hrms.db.repositories.security.*;
 import com.hrms.db.repositories.onboarding.IOnboardingRepository;
@@ -11,6 +16,14 @@ import com.hrms.db.repositories.payroll.IPayrollRepository;
 import com.hrms.db.repositories.payroll.PayrollRepositoryImpl;
 import com.hrms.db.repositories.performance.PerformanceRepositoryImpl;
 import com.hrms.db.repositories.performance.interfaces.*;
+import com.hrms.db.repositories.Expense_Management.ExpenseAuditRepositoryImpl;
+import com.hrms.db.repositories.Expense_Management.ExpenseBudgetRepositoryImpl;
+import com.hrms.db.repositories.Expense_Management.ExpenseClaimRepositoryImpl;
+import com.hrms.db.repositories.Expense_Management.ExpenseEmployeeRepositoryImpl;
+import com.hrms.db.repositories.Expense_Management.ExpenseLeaveRepositoryImpl;
+import com.hrms.db.repositories.Expense_Management.ExpenseReceiptRepositoryImpl;
+import com.hrms.db.repositories.multicountry.IMultiCountryRepository;
+import com.hrms.db.repositories.multicountry.MultiCountryRepositoryImpl;
 
 /**
  * RepositoryFactory — Singleton factory providing access to all DB repositories.
@@ -28,11 +41,32 @@ public class RepositoryFactory {
     private IPayrollRepository payrollRepository;
     private IAttritionRepository attritionRepository;
     private IOnboardingRepository onboardingRepository;
+    private DocumentRepository documentRepository;
+    private AuditRepository documentAuditRepository;
     private CustomizationRepositoryImpl customizationRepository;
     private PerformanceRepositoryImpl performanceRepository;
     private LeaveRepositoryImpl leaveRepository;
     private com.hrms.db.repositories.Leave_Management_Subsytem.LeaveManagementSubsystemRepositoryImpl leaveManagementSubsystemRepository;
     private SecurityRepositoryImpl securityRepository;
+
+    // Benefits Administration
+    private BenefitPlanDAOImpl benefitPlanRepository;
+    private BenefitPolicyDAOImpl benefitPolicyRepository;
+    private EnrollmentDAOImpl benefitEnrollmentRepository;
+    private NotificationDAOImpl benefitsNotificationRepository;
+    private EmployeeProfileDAOImpl benefitsEmployeeProfileRepository;
+    private AuditLogDAOImpl benefitsAuditLogRepository;
+
+    // Expense Management
+    private ExpenseEmployeeRepositoryImpl expenseEmployeeRepository;
+    private ExpenseClaimRepositoryImpl expenseClaimRepository;
+    private ExpenseBudgetRepositoryImpl expenseBudgetRepository;
+    private ExpenseReceiptRepositoryImpl expenseReceiptRepository;
+    private ExpenseLeaveRepositoryImpl expenseLeaveRepository;
+    private ExpenseAuditRepositoryImpl expenseAuditRepository;
+
+    // Multi-country Support
+    private IMultiCountryRepository multiCountryRepository;
 
     private RepositoryFactory() {}
 
@@ -62,6 +96,30 @@ public class RepositoryFactory {
     public synchronized IOnboardingRepository getOnboardingRepository() {
         if (onboardingRepository == null) onboardingRepository = new OnboardingRepositoryImpl();
         return onboardingRepository;
+    }
+
+    // ── Document Management ────────────────────────────────────────────
+
+    private synchronized DocumentRepository getDocumentRepositoryImpl() {
+        if (documentRepository == null) {
+            documentRepository = new DocumentRepositoryImpl();
+        }
+        return documentRepository;
+    }
+
+    private synchronized AuditRepository getDocumentAuditRepositoryImpl() {
+        if (documentAuditRepository == null) {
+            documentAuditRepository = new AuditRepositoryImpl();
+        }
+        return documentAuditRepository;
+    }
+
+    public DocumentRepository getDocumentRepository() {
+        return getDocumentRepositoryImpl();
+    }
+
+    public AuditRepository getDocumentAuditRepository() {
+        return getDocumentAuditRepositoryImpl();
     }
 
     // ── Customization (Unified Impl) ───────────────────────────────────
@@ -157,4 +215,89 @@ public class RepositoryFactory {
     public IAuthenticationService getAuthenticationService() { return getSecurityImpl(); }
     public IAuthorizationService getAuthorizationService() { return getSecurityImpl(); }
     public IEncryptionService getEncryptionService() { return getSecurityImpl(); }
+
+    // ── Benefits Administration ───────────────────────────────────────
+
+    private synchronized BenefitPlanDAOImpl getBenefitPlanImpl() {
+        if (benefitPlanRepository == null) benefitPlanRepository = new BenefitPlanDAOImpl();
+        return benefitPlanRepository;
+    }
+
+    private synchronized BenefitPolicyDAOImpl getBenefitPolicyImpl() {
+        if (benefitPolicyRepository == null) benefitPolicyRepository = new BenefitPolicyDAOImpl();
+        return benefitPolicyRepository;
+    }
+
+    private synchronized EnrollmentDAOImpl getBenefitEnrollmentImpl() {
+        if (benefitEnrollmentRepository == null) benefitEnrollmentRepository = new EnrollmentDAOImpl();
+        return benefitEnrollmentRepository;
+    }
+
+    private synchronized NotificationDAOImpl getBenefitsNotificationImpl() {
+        if (benefitsNotificationRepository == null) benefitsNotificationRepository = new NotificationDAOImpl();
+        return benefitsNotificationRepository;
+    }
+
+    private synchronized EmployeeProfileDAOImpl getBenefitsEmployeeProfileImpl() {
+        if (benefitsEmployeeProfileRepository == null) benefitsEmployeeProfileRepository = new EmployeeProfileDAOImpl();
+        return benefitsEmployeeProfileRepository;
+    }
+
+    private synchronized AuditLogDAOImpl getBenefitsAuditLogImpl() {
+        if (benefitsAuditLogRepository == null) benefitsAuditLogRepository = new AuditLogDAOImpl();
+        return benefitsAuditLogRepository;
+    }
+
+    public BenefitPlanDAO getBenefitPlanRepository() { return getBenefitPlanImpl(); }
+    public BenefitPolicyDAO getBenefitPolicyRepository() { return getBenefitPolicyImpl(); }
+    public EnrollmentDAO getBenefitEnrollmentRepository() { return getBenefitEnrollmentImpl(); }
+    public NotificationDAO getBenefitsNotificationRepository() { return getBenefitsNotificationImpl(); }
+    public EmployeeProfileDAO getBenefitsEmployeeProfileRepository() { return getBenefitsEmployeeProfileImpl(); }
+    public AuditLogDAO getBenefitsAuditLogRepository() { return getBenefitsAuditLogImpl(); }
+
+    // ── Expense Management ───────────────────────────────────────────
+
+    private synchronized ExpenseEmployeeRepositoryImpl getExpenseEmployeeImpl() {
+        if (expenseEmployeeRepository == null) expenseEmployeeRepository = new ExpenseEmployeeRepositoryImpl();
+        return expenseEmployeeRepository;
+    }
+
+    private synchronized ExpenseClaimRepositoryImpl getExpenseClaimImpl() {
+        if (expenseClaimRepository == null) expenseClaimRepository = new ExpenseClaimRepositoryImpl();
+        return expenseClaimRepository;
+    }
+
+    private synchronized ExpenseBudgetRepositoryImpl getExpenseBudgetImpl() {
+        if (expenseBudgetRepository == null) expenseBudgetRepository = new ExpenseBudgetRepositoryImpl();
+        return expenseBudgetRepository;
+    }
+
+    private synchronized ExpenseReceiptRepositoryImpl getExpenseReceiptImpl() {
+        if (expenseReceiptRepository == null) expenseReceiptRepository = new ExpenseReceiptRepositoryImpl();
+        return expenseReceiptRepository;
+    }
+
+    private synchronized ExpenseLeaveRepositoryImpl getExpenseLeaveImpl() {
+        if (expenseLeaveRepository == null) expenseLeaveRepository = new ExpenseLeaveRepositoryImpl();
+        return expenseLeaveRepository;
+    }
+
+    private synchronized ExpenseAuditRepositoryImpl getExpenseAuditImpl() {
+        if (expenseAuditRepository == null) expenseAuditRepository = new ExpenseAuditRepositoryImpl();
+        return expenseAuditRepository;
+    }
+
+    public com.hrms.db.repositories.Expense_Management.EmployeeRepository getExpenseEmployeeRepository() { return getExpenseEmployeeImpl(); }
+    public com.hrms.db.repositories.Expense_Management.ClaimRepository getExpenseClaimRepository() { return getExpenseClaimImpl(); }
+    public com.hrms.db.repositories.Expense_Management.BudgetRepository getExpenseBudgetRepository() { return getExpenseBudgetImpl(); }
+    public com.hrms.db.repositories.Expense_Management.ReceiptRepository getExpenseReceiptRepository() { return getExpenseReceiptImpl(); }
+    public com.hrms.db.repositories.Expense_Management.LeaveRepository getExpenseLeaveRepository() { return getExpenseLeaveImpl(); }
+    public com.hrms.db.repositories.Expense_Management.AuditRepository getExpenseAuditRepository() { return getExpenseAuditImpl(); }
+
+    // ── Multi-country Support ─────────────────────────────────────────
+
+    public synchronized IMultiCountryRepository getMultiCountryRepository() {
+        if (multiCountryRepository == null) multiCountryRepository = new MultiCountryRepositoryImpl();
+        return multiCountryRepository;
+    }
 }

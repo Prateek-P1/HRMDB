@@ -91,6 +91,10 @@ public class Employee {
     @Column(name = "national_id_number", length = 50)
     private String nationalIdNumber;
 
+    // --- Recruitment fields ---
+    @Column(name = "candidate_id", length = 36)
+    private String candidateId;
+
     // --- Attrition fields ---
 
     @Column(name = "attendance_rate")
@@ -220,6 +224,9 @@ public class Employee {
 
     public String getNationalIdNumber() { return nationalIdNumber; }
     public void setNationalIdNumber(String nationalIdNumber) { this.nationalIdNumber = nationalIdNumber; }
+
+    public String getCandidateId() { return candidateId; }
+    public void setCandidateId(String candidateId) { this.candidateId = candidateId; }
 
     public Double getAttendanceRate() { return attendanceRate; }
     public void setAttendanceRate(Double attendanceRate) { this.attendanceRate = attendanceRate; }
