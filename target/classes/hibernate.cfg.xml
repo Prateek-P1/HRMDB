@@ -42,6 +42,7 @@
         <mapping class="com.hrms.db.entities.DepartmentBudget"/>
         <mapping class="com.hrms.db.entities.ClaimApproval"/>
         <mapping class="com.hrms.db.entities.Receipt"/>
+        <mapping class="com.hrms.db.entities.ExpenseAuditLog"/>
 
         <!-- Time Tracking -->
         <mapping class="com.hrms.db.entities.TimeEntry"/>

@@ -40,6 +40,9 @@ public class BenefitPolicy {
     @Column(name = "policy_last_updated")
     private LocalDate policyLastUpdated;
 
+    @Column(name = "is_active")
+    private Boolean isActive = true;
+
     // --- Getters & Setters ---
 
     public Integer getPolicyId() { return policyId; }
@@ -68,4 +71,7 @@ public class BenefitPolicy {
 
     public LocalDate getPolicyLastUpdated() { return policyLastUpdated; }
     public void setPolicyLastUpdated(LocalDate policyLastUpdated) { this.policyLastUpdated = policyLastUpdated; }
+
+    public Boolean getIsActive() { return isActive; }
+    public void setIsActive(Boolean isActive) { this.isActive = isActive; }
 }
