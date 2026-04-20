@@ -11,6 +11,8 @@
 
         <!-- ORM Settings -->
         <property name="hibernate.hbm2ddl.auto">update</property>
+        <!-- SQLite JDBC metadata can fail with many tables when extracted in a single grouped query -->
+        <property name="hibernate.hbm2ddl.jdbc_metadata_extraction_strategy">individually</property>
         <property name="hibernate.show_sql">false</property>
         <property name="hibernate.format_sql">true</property>
 
@@ -80,6 +82,10 @@
         <mapping class="com.hrms.db.entities.SuccessorAssignment"/>
         <mapping class="com.hrms.db.entities.DevelopmentPlan"/>
         <mapping class="com.hrms.db.entities.PlanTask"/>
+        <mapping class="com.hrms.db.entities.SuccessionPoolEntry"/>
+        <mapping class="com.hrms.db.entities.RiskLog"/>
+        <mapping class="com.hrms.db.entities.ExternalHireRequest"/>
+        <mapping class="com.hrms.db.entities.SuccessionAuditLog"/>
 
         <!-- Onboarding / Offboarding -->
         <mapping class="com.hrms.db.entities.OnboardingTask"/>

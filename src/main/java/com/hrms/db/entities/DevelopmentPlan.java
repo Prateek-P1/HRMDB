@@ -17,6 +17,12 @@ public class DevelopmentPlan {
     @Column(name = "successor_id", nullable = false, length = 20)
     private String successorId;
 
+    /**
+     * Links this plan to a SuccessorAssignment (assignment_id). Kept as a scalar FK for simplicity.
+     */
+    @Column(name = "assignment_id")
+    private Long assignmentIdFk;
+
     @Column(name = "target_role_id")
     private Integer targetRoleId;
 
@@ -33,6 +39,9 @@ public class DevelopmentPlan {
 
     public String getSuccessorId() { return successorId; }
     public void setSuccessorId(String successorId) { this.successorId = successorId; }
+
+    public Long getAssignmentIdFk() { return assignmentIdFk; }
+    public void setAssignmentIdFk(Long assignmentIdFk) { this.assignmentIdFk = assignmentIdFk; }
 
     public Integer getTargetRoleId() { return targetRoleId; }
     public void setTargetRoleId(Integer targetRoleId) { this.targetRoleId = targetRoleId; }
