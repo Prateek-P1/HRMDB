@@ -7,6 +7,7 @@ com\hrms\db\repositories\recruitment_management\RecruitmentRepositoryImpl$11.cla
 com\hrms\db\repositories\Customization_team\Module.class
 com\hrms\db\repositories\onboarding\OnboardingTaskDTO.class
 com\hrms\db\repositories\security\IAuditService.class
+com\hrms\db\repositories\timetracking\TimeTrackingAttendanceRepositoryImpl.class
 com\hrms\db\repositories\docu_management\DocumentRepository.class
 com\hrms\db\repositories\attrition\AttritionDTOs.class
 com\hrms\db\entities\PublicHoliday.class
@@ -14,6 +15,7 @@ com\hrms\db\repositories\Customization_team\IFormRepository.class
 com\hrms\db\handlers\ConsoleErrorLogger.class
 com\hrms\db\repositories\leave\LeaveDTOs$HolidayDTO.class
 com\hrms\db\entities\CriticalRole.class
+com\hrms\db\repositories\timetracking\IAttendanceRepository.class
 com\hrms\db\repositories\recruitment_management\RecruitmentRepositoryImpl$6.class
 com\hrms\db\repositories\leave\ILeaveHolidayRepository.class
 com\hrms\db\entities\InterviewerProfile.class
@@ -24,6 +26,7 @@ com\hrms\db\entities\Receipt.class
 com\hrms\db\entities\Country.class
 com\hrms\db\repositories\Customization_team\Field.class
 com\hrms\db\repositories\attrition\AttritionEmployee.class
+com\hrms\db\repositories\timetracking\IBreakRepository.class
 com\hrms\db\repositories\multicountry\AnalyticsDTO.class
 com\hrms\db\repositories\multicountry\MultiCountryRepositoryImpl.class
 com\hrms\db\repositories\performance\models\SkillGapSummary.class
@@ -31,6 +34,7 @@ com\hrms\db\repositories\recruitment_management\RecruitmentRepositoryImpl$Hibern
 com\hrms\db\entities\ExpenseAuditLog.class
 com\hrms\db\entities\JobPosting.class
 com\hrms\db\repositories\attrition\RiskAssessment.class
+com\hrms\db\repositories\timetracking\TimeTrackingBreakRepositoryImpl.class
 com\hrms\db\entities\DepartmentBudget.class
 com\hrms\db\repositories\benefits\BenefitPolicyDAOImpl.class
 com\hrms\db\repositories\Expense_Management\ExpenseBudgetRepositoryImpl.class
@@ -104,6 +108,7 @@ com\hrms\db\repositories\Customization_team\IWorkflowRepository.class
 com\hrms\db\interfaces\RecordNotFoundException.class
 com\hrms\db\entities\Financial.class
 com\hrms\db\repositories\attrition\DashboardFilter.class
+com\hrms\db\repositories\timetracking\INotificationRepository.class
 com\hrms\db\repositories\onboarding\OnboardingCandidate.class
 com\hrms\db\repositories\Customization_team\Report.class
 com\hrms\db\entities\TaxRegime.class
@@ -119,8 +124,10 @@ com\hrms\db\repositories\leave\ILeaveAuditLogRepository.class
 com\hrms\db\repositories\multicountry\CalendarDTO$Holiday.class
 com\hrms\db\repositories\multicountry\ExchangeRateDTO.class
 com\hrms\db\repositories\onboarding\OnboardingNotification.class
+com\hrms\db\repositories\timetracking\IOvertimeRepository.class
 com\hrms\db\entities\DashboardConfig.class
 com\hrms\db\repositories\multicountry\LocaleDTO.class
+com\hrms\db\repositories\timetracking\TimeTrackingPolicyRepositoryImpl.class
 com\hrms\db\repositories\attrition\CohortRow.class
 com\hrms\db\repositories\recruitment_management\RecruitmentInterfaces$IInterviewerAvailability.class
 com\hrms\db\repositories\recruitment_management\RecruitmentInterfaces$IOffer.class
@@ -139,6 +146,8 @@ com\hrms\db\repositories\recruitment_management\RecruitmentRepositoryImpl$12.cla
 com\hrms\db\entities\Currency.class
 com\hrms\db\entities\ExitInterview.class
 com\hrms\db\repositories\multicountry\MobilityDTO.class
+com\hrms\db\repositories\timetracking\TimeTrackingEmployeeRepositoryImpl.class
+com\hrms\db\repositories\timetracking\IReportRepository.class
 com\hrms\db\repositories\recruitment_management\RecruitmentDTOs$CandidateDTO.class
 com\hrms\db\entities\BenefitEnrollment.class
 com\hrms\db\repositories\recruitment_management\RecruitmentInterfaces$IOfferRepository.class
@@ -152,6 +161,7 @@ com\hrms\db\repositories\performance\interfaces\IAuditLogRepository.class
 com\hrms\db\repositories\performance\interfaces\IFeedbackRepository.class
 com\hrms\db\repositories\multicountry\PayrollDTO.class
 com\hrms\db\repositories\recruitment_management\RecruitmentInterfaces.class
+com\hrms\db\repositories\timetracking\TimeTrackingNotificationRepositoryImpl.class
 com\hrms\db\repositories\leave\LeaveDTOs$LeavePolicyDTO.class
 com\hrms\db\repositories\multicountry\CalendarDTO.class
 com\hrms\db\repositories\recruitment_management\RecruitmentRepositoryImpl$1.class
@@ -164,6 +174,7 @@ com\hrms\db\handlers\CriticalErrorEscalator.class
 com\hrms\db\repositories\recruitment_management\RecruitmentInterfaces$IInterviewerProfileRepository.class
 com\hrms\db\repositories\security\SecurityRepositoryImpl.class
 com\hrms\db\repositories\attrition\ExitRecord.class
+com\hrms\db\repositories\timetracking\IEmployeeRepository.class
 com\hrms\db\repositories\performance\models\Feedback.class
 com\pesu\expensesubsystem\enums\CategoryType.class
 com\hrms\db\repositories\Expense_Management\AuditRepository.class
@@ -270,10 +281,12 @@ com\hrms\db\repositories\security\models\AuditEntry.class
 com\hrms\db\config\DatabaseConnection.class
 com\hrms\db\entities\Attendance.class
 com\hrms\db\repositories\payroll\EmployeeDTO.class
+com\hrms\db\repositories\timetracking\TimeTrackingReportRepositoryImpl.class
 com\hrms\db\repositories\docu_management\DocumentRepositoryImpl.class
 com\pesu\expensesubsystem\entity\DepartmentBudget.class
 com\hrms\db\repositories\recruitment_management\RecruitmentInterfaces$IApplicationRepository.class
 com\hrms\db\repositories\attrition\SegmentComparison.class
+com\hrms\db\repositories\timetracking\TimeTrackingOvertimeRepositoryImpl.class
 com\hrms\db\entities\DevelopmentPlan.class
 com\hrms\db\repositories\recruitment_management\RecruitmentRepositoryImpl$7.class
 com\hrms\db\repositories\Customization_team\ILookupRepository.class
@@ -298,6 +311,7 @@ com\hrms\db\repositories\recruitment_management\RecruitmentRepositoryImpl$8.clas
 com\pesu\expensesubsystem\entity\Employee.class
 com\hrms\db\repositories\Customization_team\IReportRepository.class
 com\hrms\db\entities\Application.class
+com\hrms\db\repositories\timetracking\IPolicyRepository.class
 com\hrms\db\repositories\performance\models\DeptReport.class
 com\hrms\db\repositories\attrition\DashboardSnapshot.class
 com\hrms\db\repositories\onboarding\CompliancePolicy.class
