@@ -58,3 +58,39 @@ Subsystem teams should:
 1. Initialize once via the facade (`HRMSDatabaseFacade.initialize()`)
 2. Obtain the factory via `HRMSDatabaseFacade.getRepositories()`
 3. Request their specific repository interface from `RepositoryFactory`
+
+## HTTP Gateway For Other Teams
+
+This repo now also includes an embedded HTTP gateway so other teams can call the database layer over a port instead of linking the JAR directly.
+
+Main class:
+- `com.hrms.db.server.HRMSHttpGatewayServer`
+
+Default port:
+- `18080`
+
+Optional environment variable:
+- `HRMS_HTTP_PORT`
+
+Run with Maven Wrapper:
+```bash
+./mvnw.cmd -DskipTests org.codehaus.mojo:exec-maven-plugin:3.5.0:java "-Dexec.mainClass=com.hrms.db.server.HRMSHttpGatewayServer"
+```
+
+Useful endpoints:
+- `GET /api/health`
+- `GET /api/dashboard`
+- `GET /api/repositories`
+- `GET /api/errors`
+- `POST /api/invoke`
+
+The root URL `/` serves a small browser-based admin frontend for health checks, repository discovery, and manual method invocation.
+
+Example invoke payload:
+```json
+{
+  "repository": "payroll",
+  "method": "fetchEmployeeData",
+  "args": ["SMOKE_EMP_001", "2026-04"]
+}
+```

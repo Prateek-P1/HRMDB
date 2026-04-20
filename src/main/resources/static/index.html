@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRMS DB Gateway</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="page-shell">
+    <header class="hero">
+        <div>
+            <p class="eyebrow">HRMS Database Team</p>
+            <h1>Gateway Console</h1>
+            <p class="hero-copy">
+                Remote access to the database interfaces, health checks, and recent system errors.
+                This frontend is backed by the embedded HTTP gateway on the same port.
+            </p>
+        </div>
+        <div class="hero-card">
+            <div class="stat-label">Service</div>
+            <div id="serviceStatus" class="stat-value">Checking...</div>
+            <div id="serviceMeta" class="stat-meta">Loading gateway status</div>
+        </div>
+    </header>
+
+    <main class="grid">
+        <section class="panel metrics-panel">
+            <div class="panel-title-row">
+                <h2>Overview</h2>
+                <button id="refreshDashboardBtn" class="ghost-btn">Refresh</button>
+            </div>
+            <div id="metricsGrid" class="metrics-grid"></div>
+        </section>
+
+        <section class="panel repo-panel">
+            <div class="panel-title-row">
+                <h2>Repositories</h2>
+                <input id="repoFilter" class="repo-filter" type="search" placeholder="Filter repositories">
+            </div>
+            <div id="repoList" class="repo-list"></div>
+        </section>
+
+        <section class="panel invoke-panel">
+            <div class="panel-title-row">
+                <h2>Method Runner</h2>
+                <div id="selectedRepoLabel" class="panel-tag">No repository selected</div>
+            </div>
+
+            <label class="field-label" for="methodSelect">Method</label>
+            <select id="methodSelect" class="input"></select>
+
+            <label class="field-label" for="argsInput">Arguments JSON Array</label>
+            <textarea id="argsInput" class="code-input" spellcheck="false">[]</textarea>
+
+            <div id="methodSignature" class="method-signature">Select a repository to see methods.</div>
+
+            <div class="action-row">
+                <button id="invokeBtn" class="primary-btn">Invoke</button>
+                <button id="sampleBtn" class="ghost-btn">Insert Sample Args</button>
+            </div>
+
+            <div class="response-wrap">
+                <div class="response-title">Response</div>
+                <pre id="responseOutput" class="response-output">Waiting for a request...</pre>
+            </div>
+        </section>
+
+        <section class="panel errors-panel">
+            <div class="panel-title-row">
+                <h2>Recent Errors</h2>
+                <button id="refreshErrorsBtn" class="ghost-btn">Refresh</button>
+            </div>
+            <div id="errorList" class="error-list"></div>
+        </section>
+    </main>
+</div>
+
+<script src="/app.js"></script>
+</body>
+</html>
