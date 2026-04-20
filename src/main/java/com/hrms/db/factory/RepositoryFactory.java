@@ -24,6 +24,24 @@ import com.hrms.db.repositories.Expense_Management.ExpenseLeaveRepositoryImpl;
 import com.hrms.db.repositories.Expense_Management.ExpenseReceiptRepositoryImpl;
 import com.hrms.db.repositories.multicountry.IMultiCountryRepository;
 import com.hrms.db.repositories.multicountry.MultiCountryRepositoryImpl;
+import com.hrms.db.repositories.timetracking.TimeTrackingAttendanceRepositoryImpl;
+import com.hrms.db.repositories.timetracking.TimeTrackingBreakRepositoryImpl;
+import com.hrms.db.repositories.timetracking.TimeTrackingEmployeeRepositoryImpl;
+import com.hrms.db.repositories.timetracking.TimeTrackingNotificationRepositoryImpl;
+import com.hrms.db.repositories.timetracking.TimeTrackingOvertimeRepositoryImpl;
+import com.hrms.db.repositories.timetracking.TimeTrackingPolicyRepositoryImpl;
+import com.hrms.db.repositories.timetracking.TimeTrackingReportRepositoryImpl;
+import com.hrms.db.repositories.succession.DevelopmentPlanRepositoryImpl;
+import com.hrms.db.repositories.succession.ExternalHireRequestRepositoryImpl;
+import com.hrms.db.repositories.succession.PlanTaskRepositoryImpl;
+import com.hrms.db.repositories.succession.ReadinessScoreRepositoryImpl;
+import com.hrms.db.repositories.succession.RiskLogRepositoryImpl;
+import com.hrms.db.repositories.succession.RoleRepositoryImpl;
+import com.hrms.db.repositories.succession.SuccessionAuditLogRepositoryImpl;
+import com.hrms.db.repositories.succession.SuccessionNotificationRepositoryImpl;
+import com.hrms.db.repositories.succession.SuccessionPoolRepositoryImpl;
+import com.hrms.db.repositories.succession.SuccessorAssignmentRepositoryImpl;
+import com.hrms.db.repositories.hranalytics.EmployeeServiceImpl;
 
 /**
  * RepositoryFactory — Singleton factory providing access to all DB repositories.
@@ -64,6 +82,30 @@ public class RepositoryFactory {
     private ExpenseReceiptRepositoryImpl expenseReceiptRepository;
     private ExpenseLeaveRepositoryImpl expenseLeaveRepository;
     private ExpenseAuditRepositoryImpl expenseAuditRepository;
+
+    // Time Tracking
+    private TimeTrackingAttendanceRepositoryImpl timeTrackingAttendanceRepository;
+    private TimeTrackingBreakRepositoryImpl timeTrackingBreakRepository;
+    private TimeTrackingEmployeeRepositoryImpl timeTrackingEmployeeRepository;
+    private TimeTrackingNotificationRepositoryImpl timeTrackingNotificationRepository;
+    private TimeTrackingOvertimeRepositoryImpl timeTrackingOvertimeRepository;
+    private TimeTrackingPolicyRepositoryImpl timeTrackingPolicyRepository;
+    private TimeTrackingReportRepositoryImpl timeTrackingReportRepository;
+
+    // Succession Planning
+    private RoleRepositoryImpl successionRoleRepository;
+    private SuccessionPoolRepositoryImpl successionPoolRepository;
+    private ReadinessScoreRepositoryImpl successionReadinessScoreRepository;
+    private SuccessorAssignmentRepositoryImpl successionSuccessorAssignmentRepository;
+    private DevelopmentPlanRepositoryImpl successionDevelopmentPlanRepository;
+    private PlanTaskRepositoryImpl successionPlanTaskRepository;
+    private SuccessionNotificationRepositoryImpl successionNotificationRepository;
+    private RiskLogRepositoryImpl successionRiskLogRepository;
+    private ExternalHireRequestRepositoryImpl successionExternalHireRequestRepository;
+    private SuccessionAuditLogRepositoryImpl successionAuditLogRepository;
+
+    // HR & Analytics
+    private EmployeeServiceImpl hrAnalyticsEmployeeService;
 
     // Multi-country Support
     private IMultiCountryRepository multiCountryRepository;
@@ -293,6 +335,123 @@ public class RepositoryFactory {
     public com.hrms.db.repositories.Expense_Management.ReceiptRepository getExpenseReceiptRepository() { return getExpenseReceiptImpl(); }
     public com.hrms.db.repositories.Expense_Management.LeaveRepository getExpenseLeaveRepository() { return getExpenseLeaveImpl(); }
     public com.hrms.db.repositories.Expense_Management.AuditRepository getExpenseAuditRepository() { return getExpenseAuditImpl(); }
+
+    // ── Time Tracking ────────────────────────────────────────────
+
+    private synchronized TimeTrackingAttendanceRepositoryImpl getTimeTrackingAttendanceImpl() {
+        if (timeTrackingAttendanceRepository == null) timeTrackingAttendanceRepository = new TimeTrackingAttendanceRepositoryImpl();
+        return timeTrackingAttendanceRepository;
+    }
+
+    private synchronized TimeTrackingBreakRepositoryImpl getTimeTrackingBreakImpl() {
+        if (timeTrackingBreakRepository == null) timeTrackingBreakRepository = new TimeTrackingBreakRepositoryImpl();
+        return timeTrackingBreakRepository;
+    }
+
+    private synchronized TimeTrackingEmployeeRepositoryImpl getTimeTrackingEmployeeImpl() {
+        if (timeTrackingEmployeeRepository == null) timeTrackingEmployeeRepository = new TimeTrackingEmployeeRepositoryImpl();
+        return timeTrackingEmployeeRepository;
+    }
+
+    private synchronized TimeTrackingNotificationRepositoryImpl getTimeTrackingNotificationImpl() {
+        if (timeTrackingNotificationRepository == null) timeTrackingNotificationRepository = new TimeTrackingNotificationRepositoryImpl();
+        return timeTrackingNotificationRepository;
+    }
+
+    private synchronized TimeTrackingOvertimeRepositoryImpl getTimeTrackingOvertimeImpl() {
+        if (timeTrackingOvertimeRepository == null) timeTrackingOvertimeRepository = new TimeTrackingOvertimeRepositoryImpl();
+        return timeTrackingOvertimeRepository;
+    }
+
+    private synchronized TimeTrackingPolicyRepositoryImpl getTimeTrackingPolicyImpl() {
+        if (timeTrackingPolicyRepository == null) timeTrackingPolicyRepository = new TimeTrackingPolicyRepositoryImpl();
+        return timeTrackingPolicyRepository;
+    }
+
+    private synchronized TimeTrackingReportRepositoryImpl getTimeTrackingReportImpl() {
+        if (timeTrackingReportRepository == null) timeTrackingReportRepository = new TimeTrackingReportRepositoryImpl();
+        return timeTrackingReportRepository;
+    }
+
+    public com.hrms.db.repositories.timetracking.IAttendanceRepository getTimeTrackingAttendanceRepository() { return getTimeTrackingAttendanceImpl(); }
+    public com.hrms.db.repositories.timetracking.IBreakRepository getTimeTrackingBreakRepository() { return getTimeTrackingBreakImpl(); }
+    public com.hrms.db.repositories.timetracking.IEmployeeRepository getTimeTrackingEmployeeRepository() { return getTimeTrackingEmployeeImpl(); }
+    public com.hrms.db.repositories.timetracking.INotificationRepository getTimeTrackingNotificationRepository() { return getTimeTrackingNotificationImpl(); }
+    public com.hrms.db.repositories.timetracking.IOvertimeRepository getTimeTrackingOvertimeRepository() { return getTimeTrackingOvertimeImpl(); }
+    public com.hrms.db.repositories.timetracking.IPolicyRepository getTimeTrackingPolicyRepository() { return getTimeTrackingPolicyImpl(); }
+    public com.hrms.db.repositories.timetracking.IReportRepository getTimeTrackingReportRepository() { return getTimeTrackingReportImpl(); }
+
+    // ── Succession Planning ───────────────────────────────────────
+
+    private synchronized RoleRepositoryImpl getSuccessionRoleImpl() {
+        if (successionRoleRepository == null) successionRoleRepository = new RoleRepositoryImpl();
+        return successionRoleRepository;
+    }
+
+    private synchronized SuccessionPoolRepositoryImpl getSuccessionPoolImpl() {
+        if (successionPoolRepository == null) successionPoolRepository = new SuccessionPoolRepositoryImpl();
+        return successionPoolRepository;
+    }
+
+    private synchronized ReadinessScoreRepositoryImpl getSuccessionReadinessScoreImpl() {
+        if (successionReadinessScoreRepository == null) successionReadinessScoreRepository = new ReadinessScoreRepositoryImpl();
+        return successionReadinessScoreRepository;
+    }
+
+    private synchronized SuccessorAssignmentRepositoryImpl getSuccessionSuccessorAssignmentImpl() {
+        if (successionSuccessorAssignmentRepository == null) successionSuccessorAssignmentRepository = new SuccessorAssignmentRepositoryImpl();
+        return successionSuccessorAssignmentRepository;
+    }
+
+    private synchronized DevelopmentPlanRepositoryImpl getSuccessionDevelopmentPlanImpl() {
+        if (successionDevelopmentPlanRepository == null) successionDevelopmentPlanRepository = new DevelopmentPlanRepositoryImpl();
+        return successionDevelopmentPlanRepository;
+    }
+
+    private synchronized PlanTaskRepositoryImpl getSuccessionPlanTaskImpl() {
+        if (successionPlanTaskRepository == null) successionPlanTaskRepository = new PlanTaskRepositoryImpl();
+        return successionPlanTaskRepository;
+    }
+
+    private synchronized SuccessionNotificationRepositoryImpl getSuccessionNotificationImpl() {
+        if (successionNotificationRepository == null) successionNotificationRepository = new SuccessionNotificationRepositoryImpl();
+        return successionNotificationRepository;
+    }
+
+    private synchronized RiskLogRepositoryImpl getSuccessionRiskLogImpl() {
+        if (successionRiskLogRepository == null) successionRiskLogRepository = new RiskLogRepositoryImpl();
+        return successionRiskLogRepository;
+    }
+
+    private synchronized ExternalHireRequestRepositoryImpl getSuccessionExternalHireRequestImpl() {
+        if (successionExternalHireRequestRepository == null) successionExternalHireRequestRepository = new ExternalHireRequestRepositoryImpl();
+        return successionExternalHireRequestRepository;
+    }
+
+    private synchronized SuccessionAuditLogRepositoryImpl getSuccessionAuditLogImpl() {
+        if (successionAuditLogRepository == null) successionAuditLogRepository = new SuccessionAuditLogRepositoryImpl();
+        return successionAuditLogRepository;
+    }
+
+    public com.hrms.db.repositories.succession.IRoleRepository getSuccessionRoleRepository() { return getSuccessionRoleImpl(); }
+    public com.hrms.db.repositories.succession.ISuccessionPoolRepository getSuccessionPoolRepository() { return getSuccessionPoolImpl(); }
+    public com.hrms.db.repositories.succession.IReadinessScoreRepository getSuccessionReadinessScoreRepository() { return getSuccessionReadinessScoreImpl(); }
+    public com.hrms.db.repositories.succession.ISuccessorAssignmentRepository getSuccessionSuccessorAssignmentRepository() { return getSuccessionSuccessorAssignmentImpl(); }
+    public com.hrms.db.repositories.succession.IDevelopmentPlanRepository getSuccessionDevelopmentPlanRepository() { return getSuccessionDevelopmentPlanImpl(); }
+    public com.hrms.db.repositories.succession.IPlanTaskRepository getSuccessionPlanTaskRepository() { return getSuccessionPlanTaskImpl(); }
+    public com.hrms.db.repositories.succession.INotificationRepository getSuccessionNotificationRepository() { return getSuccessionNotificationImpl(); }
+    public com.hrms.db.repositories.succession.IRiskLogRepository getSuccessionRiskLogRepository() { return getSuccessionRiskLogImpl(); }
+    public com.hrms.db.repositories.succession.IExternalHireRequestRepository getSuccessionExternalHireRequestRepository() { return getSuccessionExternalHireRequestImpl(); }
+    public com.hrms.db.repositories.succession.IAuditLogRepository getSuccessionAuditLogRepository() { return getSuccessionAuditLogImpl(); }
+
+    // ── HR & Analytics ───────────────────────────────────────────
+
+    private synchronized EmployeeServiceImpl getHrAnalyticsEmployeeServiceImpl() {
+        if (hrAnalyticsEmployeeService == null) hrAnalyticsEmployeeService = new EmployeeServiceImpl();
+        return hrAnalyticsEmployeeService;
+    }
+
+    public com.hrms.db.repositories.hranalytics.EmployeeService getHrAnalyticsEmployeeService() { return getHrAnalyticsEmployeeServiceImpl(); }
 
     // ── Multi-country Support ─────────────────────────────────────────
 
