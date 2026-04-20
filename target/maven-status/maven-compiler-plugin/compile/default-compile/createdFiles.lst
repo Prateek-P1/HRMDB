@@ -7,7 +7,6 @@ com\hrms\db\repositories\recruitment_management\RecruitmentRepositoryImpl$11.cla
 com\hrms\db\repositories\Customization_team\Module.class
 com\hrms\db\repositories\onboarding\OnboardingTaskDTO.class
 com\hrms\db\repositories\security\IAuditService.class
-com\hrms\db\repositories\benefits\NotificationDAOImpl.class
 com\hrms\db\repositories\docu_management\DocumentRepository.class
 com\hrms\db\repositories\attrition\AttritionDTOs.class
 com\hrms\db\entities\PublicHoliday.class
@@ -39,7 +38,6 @@ com\hrms\db\repositories\Customization_team\IEITRepository.class
 com\hrms\db\repositories\attrition\EmployeeFilter.class
 com\hrms\db\repositories\Customization_team\EIT.class
 com\hrms\db\entities\ScreeningResult.class
-com\hrms\db\gui\DBAdminDashboard.class
 com\hrms\db\entities\InterviewSchedule.class
 com\hrms\db\repositories\performance\models\AuditLog.class
 com\pesu\expensesubsystem\entity\Receipt.class
@@ -90,7 +88,6 @@ com\hrms\db\repositories\recruitment_management\RecruitmentInterfaces$ICandidate
 com\hrms\db\entities\CustomField.class
 com\hrms\db\repositories\recruitment_management\RecruitmentDTOs$ApplicationStatusDTO.class
 com\hrms\db\repositories\recruitment_management\RecruitmentDTOs$ScreeningResultDTO.class
-com\hrms\db\repositories\benefits\EmployeeProfileDAOImpl.class
 com\hrms\db\repositories\Expense_Management\BudgetRepository.class
 com\hrms\db\repositories\recruitment_management\RecruitmentRepositoryImpl$2.class
 com\hrms\db\entities\LocaleConfig.class
@@ -103,7 +100,6 @@ com\hrms\db\repositories\onboarding\ClearanceDTO.class
 com\hrms\db\repositories\recruitment_management\RecruitmentInterfaces$IJobPostingRepository.class
 com\hrms\db\repositories\recruitment_management\RecruitmentInterfaces$IEmployeeRecord.class
 com\hrms\db\repositories\attrition\CorrelationFactor.class
-com\hrms\db\gui\panels\DiagnosticsPanel.class
 com\hrms\db\repositories\Customization_team\IWorkflowRepository.class
 com\hrms\db\interfaces\RecordNotFoundException.class
 com\hrms\db\entities\Financial.class
@@ -124,7 +120,6 @@ com\hrms\db\repositories\multicountry\CalendarDTO$Holiday.class
 com\hrms\db\repositories\multicountry\ExchangeRateDTO.class
 com\hrms\db\repositories\onboarding\OnboardingNotification.class
 com\hrms\db\entities\DashboardConfig.class
-com\hrms\db\tools\DatabaseSmokeTest.class
 com\hrms\db\repositories\multicountry\LocaleDTO.class
 com\hrms\db\repositories\attrition\CohortRow.class
 com\hrms\db\repositories\recruitment_management\RecruitmentInterfaces$IInterviewerAvailability.class
@@ -132,7 +127,6 @@ com\hrms\db\repositories\recruitment_management\RecruitmentInterfaces$IOffer.cla
 com\hrms\db\entities\Holiday.class
 com\hrms\db\entities\LeavePolicy.class
 com\hrms\db\repositories\onboarding\OnboardingEmployee.class
-com\hrms\db\factory\RepositoryFactory.class
 com\hrms\db\repositories\Customization_team\TaskFlow.class
 com\hrms\db\repositories\Leave_Management_Subsytem\IEmployeeRepository.class
 com\hrms\db\repositories\recruitment_management\RecruitmentInterfaces$IInterviewResultRepository.class
@@ -145,7 +139,6 @@ com\hrms\db\repositories\recruitment_management\RecruitmentRepositoryImpl$12.cla
 com\hrms\db\entities\Currency.class
 com\hrms\db\entities\ExitInterview.class
 com\hrms\db\repositories\multicountry\MobilityDTO.class
-com\hrms\db\repositories\benefits\BenefitPlanDAOImpl.class
 com\hrms\db\repositories\recruitment_management\RecruitmentDTOs$CandidateDTO.class
 com\hrms\db\entities\BenefitEnrollment.class
 com\hrms\db\repositories\recruitment_management\RecruitmentInterfaces$IOfferRepository.class
@@ -171,7 +164,6 @@ com\hrms\db\handlers\CriticalErrorEscalator.class
 com\hrms\db\repositories\recruitment_management\RecruitmentInterfaces$IInterviewerProfileRepository.class
 com\hrms\db\repositories\security\SecurityRepositoryImpl.class
 com\hrms\db\repositories\attrition\ExitRecord.class
-com\hrms\db\repositories\benefits\AuditLogDAOImpl.class
 com\hrms\db\repositories\performance\models\Feedback.class
 com\pesu\expensesubsystem\enums\CategoryType.class
 com\hrms\db\repositories\Expense_Management\AuditRepository.class
@@ -231,7 +223,6 @@ com\hrms\db\repositories\attrition\PeriodType.class
 com\hrms\db\repositories\Expense_Management\ExpenseEmployeeRepositoryImpl.class
 com\hrms\db\repositories\performance\interfaces\ISkillGapRepository.class
 com\hrms\db\entities\Kpi.class
-com\hrms\db\facade\HRMSDatabaseFacade.class
 com\hrms\db\repositories\recruitment_management\RecruitmentInterfaces$IJobPosting.class
 com\hrms\db\repositories\recruitment_management\RecruitmentRepositoryImpl.class
 com\hrms\db\entities\Appraisal.class
@@ -251,7 +242,6 @@ com\hrms\db\repositories\recruitment_management\RecruitmentInterfaces$ICandidate
 com\hrms\db\repositories\performance\interfaces\IReportRepository.class
 com\hrms\db\repositories\attrition\CohortAnalysisReport.class
 com\hrms\db\repositories\performance\models\Reminder.class
-com\hrms\db\repositories\benefits\NotificationDAO.class
 com\hrms\db\logging\DatabaseLogHandler.class
 com\hrms\db\repositories\leave\ILeaveRecordRepository.class
 com\hrms\db\repositories\multicountry\ComplianceDTO.class
@@ -297,9 +287,7 @@ com\hrms\db\repositories\recruitment_management\RecruitmentDTOs$OfferDTO.class
 com\hrms\db\repositories\attrition\RootCauseFinding.class
 com\hrms\db\repositories\docu_management\DocumentType.class
 com\hrms\db\gui\panels\DiagnosticsPanel$1.class
-com\hrms\db\repositories\benefits\EmployeeProfileDAO.class
 com\hrms\db\repositories\recruitment_management\RecruitmentInterfaces$IScreeningResultRepository.class
-com\hrms\db\repositories\benefits\AuditLogDAO.class
 com\hrms\db\repositories\recruitment_management\RecruitmentInterfaces$IInterviewScheduleRepository.class
 com\hrms\db\entities\Goal.class
 com\hrms\db\entities\ReadinessScore.class
@@ -308,7 +296,6 @@ com\hrms\db\handlers\ErrorHandler$ErrorLevel.class
 com\hrms\db\entities\Notification.class
 com\hrms\db\repositories\recruitment_management\RecruitmentRepositoryImpl$8.class
 com\pesu\expensesubsystem\entity\Employee.class
-com\hrms\db\repositories\benefits\BenefitPlanDAO.class
 com\hrms\db\repositories\Customization_team\IReportRepository.class
 com\hrms\db\entities\Application.class
 com\hrms\db\repositories\performance\models\DeptReport.class

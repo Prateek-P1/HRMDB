@@ -4,13 +4,20 @@ import com.hrms.db.entities.BenefitPolicy;
 
 import java.util.List;
 
-/** Benefit policy rules access. */
+/** DAO contract for {@link BenefitPolicy} persistence used by Benefits Administration. */
 public interface BenefitPolicyDAO {
+
     void save(BenefitPolicy policy);
+
     BenefitPolicy findById(Integer policyId);
+
     List<BenefitPolicy> findAll();
+
     List<BenefitPolicy> findAllActive();
+
     void update(BenefitPolicy policy);
+
     void delete(Integer policyId);
+
     boolean existsById(Integer policyId);
 }
