@@ -1,0 +1,256 @@
+﻿[ERROR] COMPILATION ERROR : 
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPolicyDAO.java:[35,8] duplicate class: com.benefits.policy.dao.BenefitPolicyDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPolicyDAO.java:[3,33] package com.benefits.policy.model does not exist
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPolicyDAOImpl.java:[41,46] cannot access com.hrms.db.repositories.benefits.BenefitPolicyDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EnrollmentDAO.java:[33,8] duplicate class: main.java.com.benefits.enrollment.dao.EnrollmentDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EnrollmentDAO.java:[3,47] package main.java.com.benefits.enrollment.model does not exist
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EnrollmentDAOImpl.java:[36,43] cannot access com.hrms.db.repositories.benefits.EnrollmentDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/factory/RepositoryFactory.java:[252,12] cannot find symbol
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/factory/RepositoryFactory.java:[253,12] cannot find symbol
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPlanDAO.java:[3,34] package com.benefits.catalog.model does not exist
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPlanDAO.java:[11,15] cannot find symbol
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPlanDAO.java:[13,5] cannot find symbol
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPlanDAO.java:[15,16] cannot find symbol
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPlanDAO.java:[17,51] package BenefitPlan does not exist
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPlanDAO.java:[17,16] cannot find symbol
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPlanDAO.java:[19,17] cannot find symbol
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPolicyDAO.java:[42,15] cannot find symbol
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPolicyDAO.java:[50,5] cannot find symbol
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPolicyDAO.java:[58,16] cannot find symbol
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPolicyDAO.java:[67,16] cannot find symbol
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPolicyDAO.java:[74,17] cannot find symbol
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EmployeeProfileDAO.java:[3,26] package com.benefits.model does not exist
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EmployeeProfileDAO.java:[38,15] cannot find symbol
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EmployeeProfileDAO.java:[46,5] cannot find symbol
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EmployeeProfileDAO.java:[53,16] cannot find symbol
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EmployeeProfileDAO.java:[60,17] cannot find symbol
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/NotificationDAO.java:[3,39] package com.benefits.notification.model does not exist
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/NotificationDAO.java:[19,15] cannot find symbol
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/NotificationDAO.java:[21,5] cannot find symbol
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/NotificationDAO.java:[23,16] cannot find symbol
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/NotificationDAO.java:[25,16] cannot find symbol
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/NotificationDAO.java:[27,55] package Notification does not exist
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/NotificationDAO.java:[27,16] cannot find symbol
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/NotificationDAO.java:[29,17] cannot find symbol
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EnrollmentDAO.java:[40,15] cannot find symbol
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EnrollmentDAO.java:[48,5] cannot find symbol
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EnrollmentDAO.java:[57,16] cannot find symbol
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EnrollmentDAO.java:[64,16] cannot find symbol
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EnrollmentDAO.java:[71,17] cannot find symbol
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/AuditLogDAO.java:[3,32] package com.benefits.audit.model does not exist
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/AuditLogDAO.java:[24,15] cannot find symbol
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/AuditLogDAO.java:[27,5] cannot find symbol
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/AuditLogDAO.java:[30,16] cannot find symbol
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/AuditLogDAO.java:[33,16] cannot find symbol
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/AuditLogDAO.java:[36,51] package AuditLog does not exist
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/AuditLogDAO.java:[36,16] cannot find symbol
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/NotificationDAOImpl.java:[12,8] com.hrms.db.repositories.benefits.NotificationDAOImpl is not abstract and does not override abstract method update(Notification) in com.hrms.db.repositories.benefits.NotificationDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/NotificationDAOImpl.java:[47,31] findByEmployeeId(java.lang.String) in com.hrms.db.repositories.benefits.NotificationDAOImpl cannot implement findByEmployeeId(java.lang.String) in com.hrms.db.repositories.benefits.NotificationDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/NotificationDAOImpl.java:[35,31] findAll() in com.hrms.db.repositories.benefits.NotificationDAOImpl cannot implement findAll() in com.hrms.db.repositories.benefits.NotificationDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/NotificationDAOImpl.java:[14,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/NotificationDAOImpl.java:[27,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/NotificationDAOImpl.java:[34,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/NotificationDAOImpl.java:[46,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/NotificationDAOImpl.java:[59,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/NotificationDAOImpl.java:[73,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/AuditLogDAOImpl.java:[18,8] com.hrms.db.repositories.benefits.AuditLogDAOImpl is not abstract and does not override abstract method findByActionType(AuditLog.ActionType) in com.hrms.db.repositories.benefits.AuditLogDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/AuditLogDAOImpl.java:[54,35] findByEmployeeId(java.lang.String) in com.hrms.db.repositories.benefits.AuditLogDAOImpl cannot implement findByEmployeeId(java.lang.String) in com.hrms.db.repositories.benefits.AuditLogDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/AuditLogDAOImpl.java:[42,35] findAll() in com.hrms.db.repositories.benefits.AuditLogDAOImpl cannot implement findAll() in com.hrms.db.repositories.benefits.AuditLogDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/AuditLogDAOImpl.java:[20,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/AuditLogDAOImpl.java:[34,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/AuditLogDAOImpl.java:[41,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/AuditLogDAOImpl.java:[53,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/AuditLogDAOImpl.java:[66,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPlanDAOImpl.java:[12,8] com.hrms.db.repositories.benefits.BenefitPlanDAOImpl is not abstract and does not override abstract method existsById(java.lang.String) in com.hrms.db.repositories.benefits.BenefitPlanDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPlanDAOImpl.java:[35,30] findAll() in com.hrms.db.repositories.benefits.BenefitPlanDAOImpl cannot implement findAll() in com.hrms.db.repositories.benefits.BenefitPlanDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPlanDAOImpl.java:[14,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPlanDAOImpl.java:[27,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPlanDAOImpl.java:[34,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPlanDAOImpl.java:[44,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPlanDAOImpl.java:[58,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPlanDAOImpl.java:[71,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPlanDAOImpl.java:[86,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPolicyDAOImpl.java:[43,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPolicyDAOImpl.java:[56,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPolicyDAOImpl.java:[63,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPolicyDAOImpl.java:[73,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPolicyDAOImpl.java:[85,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPolicyDAOImpl.java:[98,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPolicyDAOImpl.java:[113,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EnrollmentDAOImpl.java:[40,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EnrollmentDAOImpl.java:[55,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EnrollmentDAOImpl.java:[64,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EnrollmentDAOImpl.java:[79,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EnrollmentDAOImpl.java:[93,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EnrollmentDAOImpl.java:[108,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EmployeeProfileDAOImpl.java:[37,8] com.hrms.db.repositories.benefits.EmployeeProfileDAOImpl is not abstract and does not override abstract method update(EmployeeProfile) in com.hrms.db.repositories.benefits.EmployeeProfileDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EmployeeProfileDAOImpl.java:[88,27] findAll() in com.hrms.db.repositories.benefits.EmployeeProfileDAOImpl cannot implement findAll() in com.hrms.db.repositories.benefits.EmployeeProfileDAO
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.12.1:compile (default-compile) on project hrms-database: Compilation failure: Compilation failure: 
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPolicyDAO.java:[35,8] duplicate class: com.benefits.policy.dao.BenefitPolicyDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPolicyDAO.java:[3,33] package com.benefits.policy.model does not exist
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPolicyDAOImpl.java:[41,46] cannot access com.hrms.db.repositories.benefits.BenefitPolicyDAO
+[ERROR]   bad source file: C:\Users\Prateek\OneDrive\Dokumen\SEM6\OOAD\HRMS\src\main\java\com\hrms\db\repositories\benefits\BenefitPolicyDAO.java
+[ERROR]     file does not contain class com.hrms.db.repositories.benefits.BenefitPolicyDAO
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EnrollmentDAO.java:[33,8] duplicate class: main.java.com.benefits.enrollment.dao.EnrollmentDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EnrollmentDAO.java:[3,47] package main.java.com.benefits.enrollment.model does not exist
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EnrollmentDAOImpl.java:[36,43] cannot access com.hrms.db.repositories.benefits.EnrollmentDAO
+[ERROR]   bad source file: C:\Users\Prateek\OneDrive\Dokumen\SEM6\OOAD\HRMS\src\main\java\com\hrms\db\repositories\benefits\EnrollmentDAO.java
+[ERROR]     file does not contain class com.hrms.db.repositories.benefits.EnrollmentDAO
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/factory/RepositoryFactory.java:[252,12] cannot find symbol
+[ERROR]   symbol:   class BenefitPolicyDAO
+[ERROR]   location: class com.hrms.db.factory.RepositoryFactory
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/factory/RepositoryFactory.java:[253,12] cannot find symbol
+[ERROR]   symbol:   class EnrollmentDAO
+[ERROR]   location: class com.hrms.db.factory.RepositoryFactory
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPlanDAO.java:[3,34] package com.benefits.catalog.model does not exist
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPlanDAO.java:[11,15] cannot find symbol
+[ERROR]   symbol:   class BenefitPlan
+[ERROR]   location: interface com.benefits.catalog.dao.BenefitPlanDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPlanDAO.java:[13,5] cannot find symbol
+[ERROR]   symbol:   class BenefitPlan
+[ERROR]   location: interface com.benefits.catalog.dao.BenefitPlanDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPlanDAO.java:[15,16] cannot find symbol
+[ERROR]   symbol:   class BenefitPlan
+[ERROR]   location: interface com.benefits.catalog.dao.BenefitPlanDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPlanDAO.java:[17,51] package BenefitPlan does not exist
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPlanDAO.java:[17,16] cannot find symbol
+[ERROR]   symbol:   class BenefitPlan
+[ERROR]   location: interface com.benefits.catalog.dao.BenefitPlanDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPlanDAO.java:[19,17] cannot find symbol
+[ERROR]   symbol:   class BenefitPlan
+[ERROR]   location: interface com.benefits.catalog.dao.BenefitPlanDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPolicyDAO.java:[42,15] cannot find symbol
+[ERROR]   symbol:   class BenefitPolicy
+[ERROR]   location: interface com.benefits.policy.dao.BenefitPolicyDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPolicyDAO.java:[50,5] cannot find symbol
+[ERROR]   symbol:   class BenefitPolicy
+[ERROR]   location: interface com.benefits.policy.dao.BenefitPolicyDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPolicyDAO.java:[58,16] cannot find symbol
+[ERROR]   symbol:   class BenefitPolicy
+[ERROR]   location: interface com.benefits.policy.dao.BenefitPolicyDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPolicyDAO.java:[67,16] cannot find symbol
+[ERROR]   symbol:   class BenefitPolicy
+[ERROR]   location: interface com.benefits.policy.dao.BenefitPolicyDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPolicyDAO.java:[74,17] cannot find symbol
+[ERROR]   symbol:   class BenefitPolicy
+[ERROR]   location: interface com.benefits.policy.dao.BenefitPolicyDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EmployeeProfileDAO.java:[3,26] package com.benefits.model does not exist
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EmployeeProfileDAO.java:[38,15] cannot find symbol
+[ERROR]   symbol:   class EmployeeProfile
+[ERROR]   location: interface com.benefits.dao.EmployeeProfileDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EmployeeProfileDAO.java:[46,5] cannot find symbol
+[ERROR]   symbol:   class EmployeeProfile
+[ERROR]   location: interface com.benefits.dao.EmployeeProfileDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EmployeeProfileDAO.java:[53,16] cannot find symbol
+[ERROR]   symbol:   class EmployeeProfile
+[ERROR]   location: interface com.benefits.dao.EmployeeProfileDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EmployeeProfileDAO.java:[60,17] cannot find symbol
+[ERROR]   symbol:   class EmployeeProfile
+[ERROR]   location: interface com.benefits.dao.EmployeeProfileDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/NotificationDAO.java:[3,39] package com.benefits.notification.model does not exist
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/NotificationDAO.java:[19,15] cannot find symbol
+[ERROR]   symbol:   class Notification
+[ERROR]   location: interface com.benefits.notification.dao.NotificationDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/NotificationDAO.java:[21,5] cannot find symbol
+[ERROR]   symbol:   class Notification
+[ERROR]   location: interface com.benefits.notification.dao.NotificationDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/NotificationDAO.java:[23,16] cannot find symbol
+[ERROR]   symbol:   class Notification
+[ERROR]   location: interface com.benefits.notification.dao.NotificationDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/NotificationDAO.java:[25,16] cannot find symbol
+[ERROR]   symbol:   class Notification
+[ERROR]   location: interface com.benefits.notification.dao.NotificationDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/NotificationDAO.java:[27,55] package Notification does not exist
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/NotificationDAO.java:[27,16] cannot find symbol
+[ERROR]   symbol:   class Notification
+[ERROR]   location: interface com.benefits.notification.dao.NotificationDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/NotificationDAO.java:[29,17] cannot find symbol
+[ERROR]   symbol:   class Notification
+[ERROR]   location: interface com.benefits.notification.dao.NotificationDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EnrollmentDAO.java:[40,15] cannot find symbol
+[ERROR]   symbol:   class Enrollment
+[ERROR]   location: interface main.java.com.benefits.enrollment.dao.EnrollmentDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EnrollmentDAO.java:[48,5] cannot find symbol
+[ERROR]   symbol:   class Enrollment
+[ERROR]   location: interface main.java.com.benefits.enrollment.dao.EnrollmentDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EnrollmentDAO.java:[57,16] cannot find symbol
+[ERROR]   symbol:   class Enrollment
+[ERROR]   location: interface main.java.com.benefits.enrollment.dao.EnrollmentDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EnrollmentDAO.java:[64,16] cannot find symbol
+[ERROR]   symbol:   class Enrollment
+[ERROR]   location: interface main.java.com.benefits.enrollment.dao.EnrollmentDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EnrollmentDAO.java:[71,17] cannot find symbol
+[ERROR]   symbol:   class Enrollment
+[ERROR]   location: interface main.java.com.benefits.enrollment.dao.EnrollmentDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/AuditLogDAO.java:[3,32] package com.benefits.audit.model does not exist
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/AuditLogDAO.java:[24,15] cannot find symbol
+[ERROR]   symbol:   class AuditLog
+[ERROR]   location: interface com.benefits.audit.dao.AuditLogDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/AuditLogDAO.java:[27,5] cannot find symbol
+[ERROR]   symbol:   class AuditLog
+[ERROR]   location: interface com.benefits.audit.dao.AuditLogDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/AuditLogDAO.java:[30,16] cannot find symbol
+[ERROR]   symbol:   class AuditLog
+[ERROR]   location: interface com.benefits.audit.dao.AuditLogDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/AuditLogDAO.java:[33,16] cannot find symbol
+[ERROR]   symbol:   class AuditLog
+[ERROR]   location: interface com.benefits.audit.dao.AuditLogDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/AuditLogDAO.java:[36,51] package AuditLog does not exist
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/AuditLogDAO.java:[36,16] cannot find symbol
+[ERROR]   symbol:   class AuditLog
+[ERROR]   location: interface com.benefits.audit.dao.AuditLogDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/NotificationDAOImpl.java:[12,8] com.hrms.db.repositories.benefits.NotificationDAOImpl is not abstract and does not override abstract method update(Notification) in com.hrms.db.repositories.benefits.NotificationDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/NotificationDAOImpl.java:[47,31] findByEmployeeId(java.lang.String) in com.hrms.db.repositories.benefits.NotificationDAOImpl cannot implement findByEmployeeId(java.lang.String) in com.hrms.db.repositories.benefits.NotificationDAO
+[ERROR]   return type java.util.List<com.hrms.db.entities.Notification> is not compatible with java.util.Collection<Notification>
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/NotificationDAOImpl.java:[35,31] findAll() in com.hrms.db.repositories.benefits.NotificationDAOImpl cannot implement findAll() in com.hrms.db.repositories.benefits.NotificationDAO
+[ERROR]   return type java.util.List<com.hrms.db.entities.Notification> is not compatible with java.util.Collection<Notification>
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/NotificationDAOImpl.java:[14,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/NotificationDAOImpl.java:[27,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/NotificationDAOImpl.java:[34,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/NotificationDAOImpl.java:[46,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/NotificationDAOImpl.java:[59,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/NotificationDAOImpl.java:[73,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/AuditLogDAOImpl.java:[18,8] com.hrms.db.repositories.benefits.AuditLogDAOImpl is not abstract and does not override abstract method findByActionType(AuditLog.ActionType) in com.hrms.db.repositories.benefits.AuditLogDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/AuditLogDAOImpl.java:[54,35] findByEmployeeId(java.lang.String) in com.hrms.db.repositories.benefits.AuditLogDAOImpl cannot implement findByEmployeeId(java.lang.String) in com.hrms.db.repositories.benefits.AuditLogDAO
+[ERROR]   return type java.util.List<com.hrms.db.entities.SecurityAuditLog> is not compatible with java.util.Collection<AuditLog>
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/AuditLogDAOImpl.java:[42,35] findAll() in com.hrms.db.repositories.benefits.AuditLogDAOImpl cannot implement findAll() in com.hrms.db.repositories.benefits.AuditLogDAO
+[ERROR]   return type java.util.List<com.hrms.db.entities.SecurityAuditLog> is not compatible with java.util.Collection<AuditLog>
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/AuditLogDAOImpl.java:[20,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/AuditLogDAOImpl.java:[34,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/AuditLogDAOImpl.java:[41,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/AuditLogDAOImpl.java:[53,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/AuditLogDAOImpl.java:[66,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPlanDAOImpl.java:[12,8] com.hrms.db.repositories.benefits.BenefitPlanDAOImpl is not abstract and does not override abstract method existsById(java.lang.String) in com.hrms.db.repositories.benefits.BenefitPlanDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPlanDAOImpl.java:[35,30] findAll() in com.hrms.db.repositories.benefits.BenefitPlanDAOImpl cannot implement findAll() in com.hrms.db.repositories.benefits.BenefitPlanDAO
+[ERROR]   return type java.util.List<com.hrms.db.entities.BenefitPlan> is not compatible with java.util.Collection<BenefitPlan>
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPlanDAOImpl.java:[14,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPlanDAOImpl.java:[27,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPlanDAOImpl.java:[34,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPlanDAOImpl.java:[44,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPlanDAOImpl.java:[58,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPlanDAOImpl.java:[71,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPlanDAOImpl.java:[86,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPolicyDAOImpl.java:[43,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPolicyDAOImpl.java:[56,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPolicyDAOImpl.java:[63,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPolicyDAOImpl.java:[73,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPolicyDAOImpl.java:[85,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPolicyDAOImpl.java:[98,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/BenefitPolicyDAOImpl.java:[113,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EnrollmentDAOImpl.java:[40,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EnrollmentDAOImpl.java:[55,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EnrollmentDAOImpl.java:[64,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EnrollmentDAOImpl.java:[79,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EnrollmentDAOImpl.java:[93,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EnrollmentDAOImpl.java:[108,5] method does not override or implement a method from a supertype
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EmployeeProfileDAOImpl.java:[37,8] com.hrms.db.repositories.benefits.EmployeeProfileDAOImpl is not abstract and does not override abstract method update(EmployeeProfile) in com.hrms.db.repositories.benefits.EmployeeProfileDAO
+[ERROR] /C:/Users/Prateek/OneDrive/Dokumen/SEM6/OOAD/HRMS/src/main/java/com/hrms/db/repositories/benefits/EmployeeProfileDAOImpl.java:[88,27] findAll() in com.hrms.db.repositories.benefits.EmployeeProfileDAOImpl cannot implement findAll() in com.hrms.db.repositories.benefits.EmployeeProfileDAO
+[ERROR]   return type java.util.List<com.hrms.db.entities.Employee> is not compatible with java.util.Collection<EmployeeProfile>
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException
