@@ -20,6 +20,26 @@ Build with system Maven:
 mvn -DskipTests compile
 ```
 
+## Distributing this module to other teams
+
+If another team is integrating by copying a JAR manually (not using Maven/Gradle dependency resolution), they must also have the runtime dependencies on their classpath. Otherwise they may see errors like:
+- `java.lang.NoClassDefFoundError: jakarta/transaction/SystemException`
+- `java.lang.NoClassDefFoundError: jakarta/xml/bind/JAXBException`
+
+Generate distribution artifacts:
+```bash
+./mvnw.cmd -DskipTests clean package
+```
+
+After packaging, you will have:
+- `target/hrms-database-1.0-SNAPSHOT.jar` (module classes only)
+- `target/hrms-database-1.0-SNAPSHOT-all.jar` (fat JAR with runtime dependencies included)
+- `target/lib/` (runtime dependency JARs)
+
+Recommended options to share:
+- **Single-file option:** share `target/hrms-database-1.0-SNAPSHOT-all.jar`
+- **Folder option:** share `target/hrms-database-1.0-SNAPSHOT.jar` + the entire `target/lib/` folder
+
 ## Local Database Testing (SQLite)
 
 The default connection is configured in `src/main/resources/hibernate.cfg.xml`:
