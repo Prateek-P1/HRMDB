@@ -26,9 +26,9 @@ public class DatabaseConnection {
      * Thread-safe via double-checked locking.
      */
     public static SessionFactory getSessionFactory() {
-        if (sessionFactory == null) {
+        if (sessionFactory == null || sessionFactory.isClosed()) {
             synchronized (DatabaseConnection.class) {
-                if (sessionFactory == null) {
+                if (sessionFactory == null || sessionFactory.isClosed()) {
                     sessionFactory = new Configuration()
                             .configure("hibernate.cfg.xml")
                             .buildSessionFactory();
@@ -46,5 +46,6 @@ public class DatabaseConnection {
         if (sessionFactory != null && !sessionFactory.isClosed()) {
             sessionFactory.close();
         }
+        sessionFactory = null;
     }
 }
